@@ -1,0 +1,15 @@
+{
+  "name": "portfolio-charles-dufour",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portfolio Charles Dufour, Brand Designer / UI Designer. Deck 1920x1080 exportable en PDF.",
+  "scripts": {
+    "pdf": "node build-pdf.mjs",
+    "check": "node check-overflow.mjs",
+    "serve": "npx http-server . -p 8080 -c-1"
+  },
+  "dependencies": {
+    "playwright": "^1.56.1"
+  }
+}

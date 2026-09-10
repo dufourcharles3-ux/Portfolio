@@ -1,0 +1,5 @@
+node_modules/
+
+# Le PDF est un livrable regenere a la demande (npm run pdf),
+# pas une source. On evite d'alourdir l'historique a chaque export.
+*.pdf

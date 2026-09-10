@@ -1,0 +1,2620 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<title>Portfolio Charles Dufour, Brand Designer / UI Designer</title>
+<meta name="author" content="Charles Dufour" />
+<meta name="description" content="Portfolio Charles Dufour, Brand Designer / UI Designer, 8 ans a la croisee de la marque et de l'interface." />
+
+<style>
+  /* ============================================================
+     POLICES EMBARQUEES
+     Fichiers locaux : aucune dependance reseau, rendu PDF fiable.
+     ============================================================ */
+  @font-face { font-family: "DM Sans"; font-style: normal; font-weight: 400; font-display: block; src: url("assets/fonts/dmsans-400.woff2") format("woff2"); }
+  @font-face { font-family: "DM Sans"; font-style: normal; font-weight: 500; font-display: block; src: url("assets/fonts/dmsans-500.woff2") format("woff2"); }
+  @font-face { font-family: "DM Sans"; font-style: normal; font-weight: 700; font-display: block; src: url("assets/fonts/dmsans-700.woff2") format("woff2"); }
+  @font-face { font-family: "DM Mono"; font-style: normal; font-weight: 400; font-display: block; src: url("assets/fonts/dmmono-400.woff2") format("woff2"); }
+  @font-face { font-family: "DM Mono"; font-style: normal; font-weight: 500; font-display: block; src: url("assets/fonts/dmmono-500.woff2") format("woff2"); }
+  @font-face { font-family: "Instrument Serif"; font-style: normal; font-weight: 400; font-display: block; src: url("assets/fonts/instrumentserif-400.woff2") format("woff2"); }
+  @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: block; src: url("assets/fonts/instrumentserif-400i.woff2") format("woff2"); }
+</style>
+
+<style>
+  :root {
+    /* Type scale, 1920x1080 */
+    --type-display: 130px;
+    --type-title: 72px;
+    --type-h2: 56px;
+    --type-h3: 36px;
+    --type-body: 28px;
+    --type-small: 24px;
+    --type-eyebrow: 24px;
+
+    /* Spacing */
+    --pad-y: 96px;
+    --pad-x: 100px;
+    --gap-title: 56px;
+    --gap-item: 32px;
+
+    /* BRIX palette */
+    --primary: #4A3AFF;
+    --primary-soft: #EFEEFF;
+    --primary-deep: #1E1B39;
+    --ink: #1E1B39;
+    --ink-soft: #474464;
+    --ink-mute: #6E6C83;
+    --paper: #FFFFFF;
+    --cream: #F7F6FB;
+    --rule: #DEDEEA;
+    --rule-soft: #EFEEFF;
+
+    /* Sizing */
+    --logo-mark: 88px;
+  }
+
+  html, body { margin: 0; padding: 0; background: #0a0a0a; }
+  body {
+    font-family: "DM Sans", system-ui, sans-serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  deck-stage > section {
+    background: var(--paper);
+    overflow: hidden;
+    position: relative;
+    font-family: "DM Sans", system-ui, sans-serif;
+  }
+
+  /* Common slide chrome */
+  .slide-pad {
+    position: absolute;
+    inset: 0;
+    padding: var(--pad-y) var(--pad-x);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-bar {
+    position: absolute;
+    left: var(--pad-x);
+    right: var(--pad-x);
+    bottom: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "DM Mono", monospace;
+    font-size: var(--type-small);
+    color: var(--ink-mute);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .footer-bar .left { display: flex; align-items: center; gap: 16px; }
+  .footer-bar .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--primary);
+  }
+  .footer-bar .right .num {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* Logo monogram */
+  .monogram {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--logo-mark);
+    height: var(--logo-mark);
+    border-radius: 50%;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    letter-spacing: -0.02em;
+  }
+  .monogram.on-light {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  /* Typography */
+  .eyebrow {
+    font-family: "DM Mono", monospace;
+    font-size: var(--type-eyebrow);
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin: 0;
+  }
+  .eyebrow.muted { color: var(--ink-mute); }
+  .eyebrow.light { color: rgba(255,255,255,0.6); }
+
+  .display {
+    font-size: var(--type-display);
+    line-height: 0.96;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+    margin: 0;
+    color: var(--ink);
+  }
+  .title {
+    font-size: var(--type-title);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    margin: 0;
+    color: var(--ink);
+  }
+  .h2 {
+    font-size: var(--type-h2);
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    font-weight: 700;
+    margin: 0;
+    color: var(--ink);
+  }
+  .h3 {
+    font-size: var(--type-h3);
+    line-height: 1.2;
+    font-weight: 700;
+    margin: 0;
+    color: var(--ink);
+  }
+  .body {
+    font-size: var(--type-body);
+    line-height: 1.5;
+    font-weight: 400;
+    margin: 0;
+    color: var(--ink-soft);
+    text-wrap: pretty;
+  }
+  .small {
+    font-size: var(--type-small);
+    line-height: 1.45;
+    font-weight: 400;
+    margin: 0;
+    color: var(--ink-soft);
+  }
+  .mono {
+    font-family: "DM Mono", monospace;
+    font-size: var(--type-small);
+    color: var(--ink-mute);
+    letter-spacing: 0.04em;
+  }
+  em.editorial {
+    font-family: "Instrument Serif", "DM Sans", serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--primary);
+  }
+
+  /* Card primitive */
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 18px;
+    padding: 40px;
+  }
+
+  /* Image placeholder */
+  .img-placeholder {
+    background: var(--primary-soft);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-family: "DM Mono", monospace;
+    font-size: 24px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 24px;
+    border: 1.5px dashed rgba(74,58,255,0.35);
+    overflow: hidden;
+  }
+  .img-placeholder.dark {
+    background: var(--ink);
+    color: var(--primary-soft);
+    border-color: rgba(255,255,255,0.15);
+  }
+
+  /* Subtle texture for placeholders */
+  .placeholder-stripes {
+    background:
+      var(--primary-soft)
+      repeating-linear-gradient(135deg,
+        transparent 0,
+        transparent 12px,
+        rgba(74,58,255,0.06) 12px,
+        rgba(74,58,255,0.06) 13px);
+  }
+
+  /* Image-slot styling */
+  image-slot {
+    --is-bg: var(--primary-soft);
+    --is-color: var(--primary);
+    --is-border: rgba(74,58,255,0.25);
+  }
+
+  /* Bottom navigation bar (BRIX-style) */
+  .nav-strip {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 96px;
+    background: var(--cream);
+    border-top: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--pad-x);
+    font-family: "DM Mono", monospace;
+  }
+  .nav-strip .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .nav-strip .nav-section {
+    font-size: var(--type-small);
+    color: var(--ink-mute);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .nav-strip .nav-section-active {
+    font-size: var(--type-small);
+    color: var(--ink);
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .nav-strip .nav-pageno {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: var(--type-small);
+    color: var(--ink);
+  }
+  .nav-strip .nav-pageno .badge {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 24px;
+  }
+  .nav-strip.dark {
+    background: var(--ink);
+    border-top-color: rgba(255,255,255,0.1);
+  }
+  .nav-strip.dark .nav-section { color: rgba(255,255,255,0.5); }
+  .nav-strip.dark .nav-section-active { color: #fff; }
+  .nav-strip.dark .nav-pageno { color: #fff; }
+
+  /* ============ SLIDE-SPECIFIC ============ */
+
+  /* 01 Cover */
+  .cover {
+    display: grid;
+    grid-template-columns: 47fr 53fr;
+    height: 100%;
+  }
+  .cover .left {
+    background: var(--primary);
+    color: #fff;
+    padding: var(--pad-y) var(--pad-x);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover .left::after {
+    content: "";
+    position: absolute;
+    width: 900px; height: 900px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    right: -500px; top: -200px;
+    pointer-events: none;
+  }
+  .cover .right {
+    position: relative;
+    background: var(--ink);
+    overflow: hidden;
+  }
+  .cover .right image-slot {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    --is-bg: #2a2640;
+    --is-color: rgba(255,255,255,0.4);
+    --is-border: rgba(255,255,255,0.12);
+  }
+  .cover .name {
+    font-size: 124px;
+    line-height: 0.94;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+  }
+  .cover .role {
+    font-size: 36px;
+    line-height: 1.2;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    margin: 0;
+  }
+  .cover .baseline {
+    font-family: "DM Mono", monospace;
+    font-size: var(--type-small);
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* 04 Logos */
+  .logo-cell {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: 0.04em;
+    text-align: center;
+    padding: 24px;
+    transition: all 0.2s ease;
+    font-size: 30px;
+  }
+  .logo-cell.serif {
+    font-family: "Instrument Serif", serif;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+  .logo-cell.condensed {
+    letter-spacing: 0.2em;
+    font-size: 24px;
+  }
+  .logo-cell.small {
+    font-size: 26px;
+  }
+
+  /* 07 Process step */
+  .process-step {
+    display: grid;
+    grid-row: 1 / -1;
+    grid-template-rows: subgrid;
+    padding-top: 28px;
+    border-top: 2px solid var(--rule);
+  }
+  .process-step .num {
+    font-size: 88px;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .process-step .name {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 0 0 12px;
+    line-height: 1.15;
+    align-self: end;
+  }
+  .process-step .desc {
+    font-size: var(--type-small);
+    color: var(--ink-soft);
+    line-height: 1.5;
+    min-height: calc(var(--type-small) * 4.5);
+  }
+
+  /* 08 Section break */
+  .section-break-slide {
+    background: var(--primary) !important;
+    color: #fff;
+  }
+  .section-break-slide .title,
+  .section-break-slide .display,
+  .section-break-slide .h2 { color: #fff; }
+  .section-break-slide .body { color: rgba(255,255,255,0.78); }
+  .section-break-slide .eyebrow { color: rgba(255,255,255,0.65); }
+
+  /* 14 Chiffres */
+  .stat-cell .num {
+    font-size: 156px;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .stat-cell .lab {
+    font-size: var(--type-small);
+    color: var(--ink-soft);
+    margin-top: 20px;
+    line-height: 1.35;
+  }
+
+  /* 16 Parcours */
+  .timeline-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 48px;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    align-items: baseline;
+  }
+  .timeline-row:last-of-type { border-bottom: none; }
+  .timeline-row .yr {
+    font-family: "DM Mono", monospace;
+    font-size: var(--type-small);
+    color: var(--primary);
+    letter-spacing: 0.08em;
+    font-weight: 500;
+  }
+  .timeline-row .role-name {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+  .timeline-row .role-desc {
+    font-size: var(--type-small);
+    color: var(--ink-soft);
+    line-height: 1.45;
+  }
+
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    border: 1.5px solid var(--rule);
+    border-radius: 999px;
+    padding: 10px 20px;
+    font-size: 24px;
+    color: var(--ink-soft);
+    background: var(--paper);
+  }
+  .tag.filled {
+    background: var(--primary-soft);
+    border-color: transparent;
+    color: var(--primary-deep);
+    font-weight: 500;
+  }
+  .tag-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* Image full-width band */
+  .image-band {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+  }
+  .image-band.cover-fit {
+    object-fit: cover;
+  }
+
+  /* Mockup frame */
+  .mockup-frame {
+    box-sizing: border-box;
+    background: var(--cream);
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mockup-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .mockup-frame.contain img {
+    object-fit: contain;
+  }
+  .mockup-frame.dior {
+    background: #fff;
+  }
+  .mockup-frame.apm { background: #fff; }
+  .apm-step { display: flex; flex-direction: column; align-items: center; gap: 12px; flex: 0 0 116px; text-align: center; }
+  .apm-node { width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid var(--rule); display: flex; align-items: center; justify-content: center; font-family: "DM Mono", monospace; font-weight: 500; font-size: 22px; color: var(--ink-mute); background: #fff; }
+  .apm-step.on .apm-node { background: var(--primary); border-color: var(--primary); color: #fff; }
+  .apm-conn { flex: 1 1 auto; height: 2px; background: var(--rule); margin-top: 23px; min-width: 10px; }
+
+  /* KPI bar */
+  .kpi-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding-top: 32px;
+    margin-top: 32px;
+    border-top: 1px solid var(--rule);
+  }
+  .kpi-bar .kpi-eyebrow { color: var(--ink-mute); }
+  .kpi-bar .kpi-label {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-top: 8px;
+  }
+  .kpi-bar .kpi-desc {
+    font-size: 24px;
+    color: var(--ink-soft);
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+
+  /* ============================================================
+     DIRECTION VISUELLE FIGEE
+     Les valeurs ci-dessous etaient auparavant appliquees a chaud
+     par le panneau "Tweaks" (React) au chargement de la page.
+     Elles sont desormais ecrites en dur : le rendu ne depend plus
+     d'un script, ce qui est indispensable pour l'export PDF.
+     Reference : palette "bleu marine", densite "compact".
+     ============================================================ */
+  :root {
+    --primary: #0F1A4D;
+    --primary-soft: #E8ECF5;
+    --primary-deep: #0A1234;
+    --ink: #0A1234;
+
+    --pad-x: 80px;
+    --pad-y: 72px;
+    --gap-title: 40px;
+    --gap-item: 24px;
+  }
+
+  /* Les icones inline portaient la couleur de l'ancienne palette en dur.
+     Elles sont desormais peintes via currentColor, donc suivent --primary. */
+  deck-stage svg { color: var(--primary); }
+
+  /* Footer de section masque (reglage "showNav: false"). */
+  .nav-strip { display: none !important; }
+
+  /* ============================================================
+     MISE EN PAGE DU DECK
+     <deck-stage> etait un custom element pilote par deck-stage.js,
+     qui n'est pas distribue avec le document. On le remplace par
+     du CSS pur : chaque <section> est une page de 1920x1080.
+     ============================================================ */
+  deck-stage {
+    display: block;
+    width: 1920px;
+    margin: 0 auto;
+  }
+  deck-stage > section {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    break-after: page;
+    break-inside: avoid;
+  }
+  deck-stage > section:last-of-type { break-after: auto; }
+
+  /* ============================================================
+     EXPORT PDF, 1920x1080
+     ============================================================ */
+  @page { size: 1920px 1080px; margin: 0; }
+
+  @media print {
+    html, body { margin: 0; padding: 0; background: #fff; width: 1920px; }
+    deck-stage { zoom: 1 !important; }
+    deck-stage > section { box-shadow: none; margin: 0; }
+  }
+
+  /* ============================================================
+     CONFORT DE LECTURE A L'ECRAN
+     Sans effet sur le PDF : le zoom est neutralise en @media print.
+     ============================================================ */
+  @media screen {
+    body { background: #06091C; padding: 40px 0; }
+    deck-stage > section {
+      margin: 0 auto 40px;
+      box-shadow: 0 24px 70px rgba(0,0,0,0.45);
+    }
+  }
+
+  /* ============================================================
+     VISUELS MANQUANTS
+     Tant qu'un fichier n'est pas depose dans assets/, on affiche
+     un cadre nomme plutot qu'une icone d'image cassee : la mise
+     en page reste juste et le fichier attendu reste identifiable.
+     ============================================================ */
+  .img-missing {
+    width: 100%;
+    height: 100%;
+    min-height: 120px;
+    box-sizing: border-box;
+    background:
+      var(--primary-soft)
+      repeating-linear-gradient(135deg, transparent 0, transparent 14px, rgba(15,26,77,0.05) 14px, rgba(15,26,77,0.05) 15px);
+    border: 1.5px dashed rgba(15,26,77,0.28);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 24px;
+    text-align: center;
+  }
+  .img-missing .im-label {
+    font-family: "DM Mono", monospace;
+    font-size: 20px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--primary);
+  }
+  .img-missing .im-file {
+    font-family: "DM Mono", monospace;
+    font-size: 17px;
+    color: var(--ink-mute);
+    word-break: break-all;
+    max-width: 90%;
+  }
+
+  /* ============================================================
+     COMPOSANTS AJOUTES
+     ============================================================ */
+
+  /* Bandeau d'etapes, reprend .apm-step / .apm-node / .apm-conn
+     definis plus haut mais restes inutilises dans le document. */
+  .flow-strip {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    width: 100%;
+  }
+  .apm-step .apm-cap {
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.2;
+    min-height: calc(21px * 1.2 * 2);
+  }
+  .apm-step .apm-sub {
+    font-size: 19px;
+    color: var(--ink-mute);
+    line-height: 1.3;
+  }
+  .apm-step { flex: 0 0 150px; }
+
+  /* Liste "avant / apres" */
+  .ba-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .ba-col {
+    border-radius: 16px;
+    padding: 32px 34px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .ba-col.before { background: var(--cream); border: 1px solid var(--rule); }
+  .ba-col.after { background: var(--primary-soft); border: 1px solid transparent; }
+  .ba-col .ba-head {
+    font-family: "DM Mono", monospace;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .ba-col.after .ba-head { color: var(--primary); }
+  .ba-col li {
+    font-size: 23px;
+    line-height: 1.45;
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+  }
+  .ba-col ul { margin: 0; padding-left: 22px; }
+
+  /* Grille de livrables / assets */
+  .deliv-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+  .deliv-cell {
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    padding: 26px 28px;
+    background: var(--paper);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .deliv-cell .dc-title {
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .deliv-cell .dc-desc {
+    font-size: 21px;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+  .deliv-cell .dc-meta {
+    font-family: "DM Mono", monospace;
+    font-size: 18px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-top: auto;
+    padding-top: 12px;
+  }
+
+  /* Bandeau de preuve, "vu dans tel projet" */
+  .proof-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+  .proof-chip {
+    font-family: "DM Mono", monospace;
+    font-size: 19px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--primary);
+    background: var(--primary-soft);
+    border-radius: 999px;
+    padding: 8px 18px;
+  }
+
+  /* Ecrans multi-supports */
+  .screens-row {
+    display: grid;
+    grid-template-columns: 1.32fr 0.68fr;
+    gap: 22px;
+    min-height: 0;
+  }
+  .device-cap {
+    font-family: "DM Mono", monospace;
+    font-size: 19px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-top: 10px;
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<deck-stage width="1920" height="1080">
+
+  <!-- ════════════ 01 COVER ════════════ -->
+  <section data-label="01 Cover">
+    <div class="cover">
+      <div class="left">
+        <div style="display: flex; flex-direction: column; gap: 36px;">
+          <span class="eyebrow" style="color: rgba(255,255,255,0.65);">Brand Designer / UI Designer</span>
+          <h1 class="name">Charles<br/>Dufour</h1>
+          <p class="role">Direction Artistique <em class="editorial" style="color: rgba(255,255,255,0.85);">×</em> UI Design<br/>8 ans d'expérience, en groupe média et en environnement produit</p>
+        </div>
+
+        <span class="baseline">charlesdufour.fr</span>
+      </div>
+
+      <div class="right">
+        <img src="assets/portrait-charles.png" alt="Charles Dufour"
+             style="width: 100%; height: 100%; object-fit: contain; object-position: bottom center; display: block;"/>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════ 02 SOMMAIRE ════════════ -->
+  <section data-label="02 Sommaire" style="background: var(--cream);">
+    <div class="slide-pad">
+      <div style="display: flex; flex-direction: column; gap: 28px; margin-bottom: 80px;">
+        <span class="eyebrow">Sommaire</span>
+        <h1 class="title">Au programme.</h1>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; flex: 1; align-content: start;">
+        <div class="card" style="display: flex; flex-direction: column; gap: 28px; min-height: 460px;">
+          <div style="font-size: 88px; font-weight: 700; color: var(--primary); line-height: 1; letter-spacing: -0.02em;">01</div>
+          <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-end; gap: 16px;">
+            <span class="eyebrow muted">Acte 1</span>
+            <p class="h3">Présentation</p>
+            <p class="small">Profil, philosophie, expertises et process design.</p>
+          </div>
+        </div>
+        <div class="card" style="display: flex; flex-direction: column; gap: 28px; min-height: 460px; background: var(--primary-soft); border-color: transparent;">
+          <div style="font-size: 88px; font-weight: 700; color: var(--primary); line-height: 1; letter-spacing: -0.02em;">02</div>
+          <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-end; gap: 16px;">
+            <span class="eyebrow muted">Acte 2</span>
+            <p class="h3">Études de cas</p>
+            <p class="small">EnVols, Smartch, Autrice, DIOR, APM, Pierre Fabre.</p>
+          </div>
+        </div>
+        <div class="card" style="display: flex; flex-direction: column; gap: 28px; min-height: 460px;">
+          <div style="font-size: 88px; font-weight: 700; color: var(--primary); line-height: 1; letter-spacing: -0.02em;">03</div>
+          <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-end; gap: 16px;">
+            <span class="eyebrow muted">Acte 3</span>
+            <p class="h3">Méthode &amp; impact</p>
+            <p class="small">Assets, ateliers et adoption, chiffres clés, parcours.</p>
+          </div>
+        </div>
+        <div class="card" style="display: flex; flex-direction: column; gap: 28px; min-height: 460px;">
+          <div style="font-size: 88px; font-weight: 700; color: var(--primary); line-height: 1; letter-spacing: -0.02em;">04</div>
+          <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-end; gap: 16px;">
+            <span class="eyebrow muted">Acte 4</span>
+            <p class="h3">Discutons-en</p>
+            <p class="small">Ce que je cherche, contact.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nav-strip">
+      <div class="nav-left">
+        <span class="nav-section-active">Sommaire</span>
+      </div>
+      <div class="nav-pageno">
+        <div class="badge">02</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════ 03 ABOUT ════════════ -->
+  <section data-label="03 About">
+    <div class="slide-pad" style="padding-bottom: 196px;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 100px; flex: 1; min-height: 0;">
+        <div style="display: flex; flex-direction: column; gap: 48px; justify-content: center; min-height: 0;">
+          <span class="eyebrow">À propos</span>
+          <h1 class="title">8 ans à la croisée de la <em class="editorial">marque</em> et de l'<em class="editorial">interface</em>.</h1>
+          <p class="body" style="max-width: 700px;">Je décline et fais évoluer des identités visuelles sur des écosystèmes digitaux complexes : produits web et mobile, réseaux sociaux, CRM, supports marketing. De la direction artistique au Design System, en collaboration avec les équipes Produit, Marque et Édito.</p>
+
+          <p class="body" style="max-width: 700px;">Un parcours qui combine les deux cultures que réclame ce type de poste : huit ans en <strong style="font-weight:700;color:var(--ink)">groupe média</strong> et en agence, puis en <strong style="font-weight:700;color:var(--ink)">environnement produit</strong>, aux côtés d'équipes Design System, Édito et Marketing.</p>
+
+          <div style="display: flex; gap: 64px; padding-top: 32px; border-top: 1px solid var(--rule);">
+            <div>
+              <div style="font-size: 72px; font-weight: 700; color: var(--ink); line-height: 1; letter-spacing: -0.02em;">8</div>
+              <p class="small" style="margin-top: 12px;">années<br/>d'expérience</p>
+            </div>
+            <div>
+              <div style="font-size: 72px; font-weight: 700; color: var(--ink); line-height: 1; letter-spacing: -0.02em;">1M<span style="font-size: 0.5em;">+</span></div>
+              <p class="small" style="margin-top: 12px;">audience<br/>touchée</p>
+            </div>
+            <div>
+              <div style="font-size: 72px; font-weight: 700; color: var(--ink); line-height: 1; letter-spacing: -0.02em;">-35%</div>
+              <p class="small" style="margin-top: 12px;">temps de<br/>production</p>
+            </div>
+          </div>
+        </div>
+        <div style="position: relative; border-radius: 14px; overflow: hidden; background: var(--primary-soft); min-height: 0; height: 100%;">
+          <img src="assets/portrait-charles.png" alt="Charles Dufour" style="width: 100%; height: 100%; object-fit: contain; display: block;"/>
+        </div>
+      </div>
+    </div>
+    <div class="nav-strip">
+      <div class="nav-left">
+        <span class="nav-section-active">À propos</span>
+      </div>
+      <div class="nav-pageno">
+        <div class="badge">03</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════ 04 LOGOS CLIENTS ════════════ -->
+  <section data-label="04 Clients" style="background: var(--cream);">
+    <div class="slide-pad" style="padding-bottom: 196px;">
+      <div style="display: flex; flex-direction: column; gap: 28px; margin-bottom: 80px;">
+        <span class="eyebrow">Clients &amp; marques</span>
+        <h1 class="title">Ils m'ont fait confiance.</h1>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(2, 1fr); gap: 16px; flex: 1;">
+        <div class="logo-cell serif">Dior</div>
+        <div class="logo-cell serif">Air France</div>
+        <div class="logo-cell small">Pierre Fabre</div>
+        <div class="logo-cell condensed">SNCF</div>
+        <div class="logo-cell condensed">ORANGE</div>
+        <div class="logo-cell">Betclic</div>
+        <div class="logo-cell condensed">ENEDIS</div>
+        <div class="logo-cell condensed">SAFRAN</div>
+        <div class="logo-cell condensed">CMA CGM</div>
+        <div class="logo-cell">Décathlon</div>
+      </div>
+    </div>
+    <div class="nav-strip">
+      <div class="nav-left">
+        <span class="nav-section-active">Clients</span>
+      </div>
+      <div class="nav-pageno">
+        <div class="badge">04</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════ 05 PHILOSOPHIE ════════════ -->
+  <section data-label="05 Philosophie">
+    <div class="slide-pad" style="padding-bottom: 196px;">
+      <div style="display: flex; flex-direction: column; gap: 28px; margin-bottom: 80px; max-width: 1200px;">
+        <span class="eyebrow">Philosophie</span>
+        <h1 class="title">Le design comme rôle <em class="editorial">stratégique</em>.</h1>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; flex: 1; align-content: stretch;">
+        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; background: var(--primary-soft); border-color: transparent;">
+          <div style="font-size: 96px; font-weight: 700; color: var(--primary); line-height: 1; letter-spacing: -0.02em;">01</div>
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <p class="h3">Incarner une identité <br/>de marque forte.</p>
+            <p class="small" style="width: 497px;">Garantir la cohérence visuelle entre tous les points de contact, digitaux et physiques.</p>
+          </div>
+        </div>
+        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="font-size: 96px; font-weight: 700; color: var(--primary); line-height: 1; letter-spacing: -0.02em;">02</div>
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <p class="h3">Clarifier la prise <br/>de décision.</p>
+            <p class="small">Rendre lisible la complexité produit, technique et métier pour aligner les équipes.</p>
+          </div>
+        </div>
+        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="font-size: 96px; font-weight: 700; color: var(--primary); line-height: 1; letter-spacing: -0.02em;">03</div>
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <p class="h3">Servir la performance, <br/>sans trahir la marque.</p>
+            <p class="small">Optimiser flux et adoption tout en préservant l'exigence graphique.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nav-strip">
+      <div class="nav-left">
+        <span class="nav-section-active">Philosophie</span>
+      </div>
+      <div class="nav-pageno">
+        <div class="badge">05</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════ 06 EXPERTISES ════════════ -->
+  <section data-label="06 Expertises" style="background: var(--cream);">
+    <div class="slide-pad" style="padding-bottom: 196px;">
+      <div style="display: flex; flex-direction: column; gap: 28px; margin-bottom: 80px;">
+        <span class="eyebrow">Expertises</span>
+        <h1 class="title">Un profil <em class="editorial">hybride</em>, moitié marque, moitié interface.</h1>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 64px; flex: 1; align-content: start;">
+        <div style="display: flex; flex-direction: column; gap: 28px; margin: 100px 0 0;">
+          <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--primary-soft); display: flex; align-items: center; justify-content: center;">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+              <circle cx="14" cy="14" r="9" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M21 21l8 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <p class="h3">Direction Artistique<br/>&amp; Identité de marque</p>
+          <p class="body">Déclinaison et évolution des identités visuelles : assets, iconographie, illustrations, patterns, layouts, templates et guidelines cross-canaux.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 28px; margin: 100px 0 0;">
+          <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--primary-soft); display: flex; align-items: center; justify-content: center;">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+              <path d="M6 8h24M6 18h24M6 28h16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <p class="h3">UI, Prototypage<br/>&amp; Motion</p>
+          <p class="body">Interfaces et prototypes interactifs sur Figma, du desktop au mobile. Culture Motion Design et supports narratifs pour défendre une vision créative.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 28px; margin: 100px 0px 0px">
+          <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--primary-soft); display: flex; align-items: center; justify-content: center;">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+              <rect x="6" y="6" width="10" height="10" rx="2" stroke="currentColor" stroke-width="2.5"/>
+              <rect x="20" y="6" width="10" height="10" rx="2" stroke="currentColor" stroke-width="2.5"/>
+              <rect x="6" y="20" width="10" height="10" rx="2" stroke="currentColor" stroke-width="2.5"/>
+              <rect x="20" y="20" width="10" height="10" rx="2" stroke="currentColor" stroke-width="2.5"/>
+            </svg>
+          </div>
+          <p class="h3">Design System<br/>&amp; cohérence</p>
+          <p class="body">Maintenance des logos, icon sets et composants graphiques. Cohérence de marque entre produits et canaux, documentation et adoption.</p>
+        </div>
+      </div>
+    </div>
+    <div class="nav-strip">
+      <div class="nav-left">
+        <span class="nav-section-active">Expertises</span>
+      </div>
+      <div class="nav-pageno">
+        <div class="badge">06</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════ 07 PROCESS ════════════ -->
+  <section data-label="07 Process">
+    <div class="slide-pad" style="padding-bottom: 196px;">
+      <div style="display: flex; flex-direction: column; gap: 28px; margin-bottom: 80px;">
+        <span class="eyebrow">Process</span>
+        <h1 class="title">De la veille à l'adoption, en atelier.</h1>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: auto auto auto; gap: 32px; flex: 1; align-content: center;">
+        <div class="process-step">
+          <div class="num">01</div>
+          <div class="name">Veille</div>
+          <p class="desc">Benchmark des tendances, de la culture visuelle et des codes de marque.</p>
+        </div>
+        <div class="process-step">
+          <div class="num">02</div>
+          <div class="name">Atelier</div>
+          <p class="desc">Ateliers de co-conception, cadrage avec les équipes produit et marque.</p>
+        </div>
+        <div class="process-step">
+          <div class="num">03</div>
+          <div class="name">Direction artistique</div>
+          <p class="desc">Identité visuelle, assets, iconographie, patterns et guidelines.</p>
+        </div>
+        <div class="process-step">
+          <div class="num">04</div>
+          <div class="name">UI &amp; Prototypage</div>
+          <p class="desc">Interfaces, maquettes et prototypes interactifs sur Figma.</p>
+        </div>
+        <div class="process-step">
+          <div class="num">05</div>
+          <div class="name">Adoption</div>
+          <p class="desc">Documentation, accompagnement des équipes, adoption des standards.</p>
+        </div>
+      </div>
+    </div>
+    <div class="nav-strip">
+      <div class="nav-left">
+        <span class="nav-section-active">Process</span>
+      </div>
+      <div class="nav-pageno">
+        <div class="badge">07</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════ 08 SECTION BREAK ════════════ -->
+  <section data-label="08 Études de cas" class="section-break-slide">
+    <div class="slide-pad" style="justify-content: space-between;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+        <span class="eyebrow" style="color: rgba(255,255,255,0.6);">Acte 2, le cœur du sujet</span>
+      </div>
+
+      <h1 class="display" style="font-size: 230px; line-height: 0.92; color: #fff;">Études<br/>de cas.</h1>
+
+      <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.18);">
+        <div>
+          <span class="eyebrow" style="color: rgba(255,255,255,0.6); font-size: 24px;">01</span>
+          <p style="color: #fff; font-size: 28px; font-weight: 700; margin-top: 12px; line-height: 1.1;">EnVols</p>
+          <p style="color: rgba(255,255,255,0.65); font-size: 24px; margin-top: 8px; line-height: 1.3;">Air France, éditorial</p>
+        </div>
+        <div>
+          <span class="eyebrow" style="color: rgba(255,255,255,0.6); font-size: 24px;">02</span>
+          <p style="color: #fff; font-size: 28px; font-weight: 700; margin-top: 12px; line-height: 1.1;">Smartch</p>
+          <p style="color: rgba(255,255,255,0.65); font-size: 24px; margin-top: 8px; line-height: 1.3;">Brand System, Motion UX</p>
+        </div>
+        <div>
+          <span class="eyebrow" style="color: rgba(255,255,255,0.6); font-size: 24px;">03</span>
+          <p style="color: #fff; font-size: 28px; font-weight: 700; margin-top: 12px; line-height: 1.1;">Autrice</p>
+          <p style="color: rgba(255,255,255,0.65); font-size: 24px; margin-top: 8px; line-height: 1.3;">IA, L&amp;D landing</p>
+        </div>
+        <div>
+          <span class="eyebrow" style="color: rgba(255,255,255,0.6); font-size: 24px;">04</span>
+          <p style="color: #fff; font-size: 28px; font-weight: 700; margin-top: 12px; line-height: 1.1;">DIOR</p>
+          <p style="color: rgba(255,255,255,0.65); font-size: 24px; margin-top: 8px; line-height: 1.3;">Retail performance</p>
+        </div>
+        <div>
+          <span class="eyebrow" style="color: rgba(255,255,255,0.6); font-size: 24px;">05</span>
+          <p style="color: #fff; font-size: 28px; font-weight: 700; margin-top: 12px; line-height: 1.1;">APM</p>
+          <p style="color: rgba(255,255,255,0.65); font-size: 24px; margin-top: 8px; line-height: 1.3;">Desktop &amp; mobile</p>
+        </div>
+        <div>
+          <span class="eyebrow" style="color: rgba(255,255,255,0.6); font-size: 24px;">06</span>
+          <p style="color: #fff; font-size: 28px; font-weight: 700; margin-top: 12px; line-height: 1.1;">Pierre Fabre</p>
+          <p style="color: rgba(255,255,255,0.65); font-size: 24px; margin-top: 8px; line-height: 1.3;">Social media, artwork</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- ════════════ 09 ENVOLS, CONTEXTE ════════════ -->
+  <section data-label="09 EnVols, Contexte">
+    <div class="slide-pad" style="padding-bottom: 196px;">
+      <div style="display: flex; flex-direction: column; gap: 28px; margin-bottom: 44px;">
+        <span class="eyebrow">EnVols, 01, Contexte &amp; Défi</span>
+        <h1 class="h2">Transformer un média d'évasion <br/>en <em class="editorial">écosystème</em> de conversion.</h1>
+        <p class="body" style="max-width: 1240px;">Conception de la plateforme EnVols : hiérarchiser une offre éditoriale dense tout en intégrant les objectifs de réservation et de monétisation publicitaire, sans rompre l'expérience premium.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 36px;">
+        <div style="padding: 20px 0; border-top: 1px solid var(--rule);">
+          <span class="eyebrow muted">Client</span>
+          <p class="h3" style="margin-top: 8px; font-size: 26px;">Air France</p>
+        </div>
+        <div style="padding: 20px 0; border-top: 1px solid var(--rule);">
+          <span class="eyebrow muted">Rôle</span>
+          <p class="h3" style="margin-top: 8px; font-size: 26px;">UX / UI Designer</p>
+          <p class="small" style="margin-top: 4px;">Lead conception plateforme</p>
+        </div>
+        <div style="padding: 20px 0; border-top: 1px solid var(--rule);">
+          <span class="eyebrow muted">Type</span>
+          <p class="h3" style="margin-top: 8px; font-size: 26px;">Média de marque</p>
+          <p class="small" style="margin-top: 4px;">Web, Print, Social, Newsletter</p>
+        </div>
+        <div style="padding: 20px 0; border-top: 1px solid var(--rule);">
+          <span class="eyebrow muted">Scale</span>
+          <p class="h3" style="margin-top: 8px; font-size: 26px;">1M visiteurs/mois</p>
+          <p class="small" style="margin-top: 4px;">4M pages vues / mois</p>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; flex: 1; align-items: stretch; min-height: 0;">
+        <div style="display: flex; flex-direction: column; gap: 20px; min-height: 0;">
+          <span class="eyebrow muted">Deux objectifs de rentabilité, un enjeu de design</span>
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <div style="display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: baseline; padding: 12px 0; border-bottom: 1px solid var(--rule-soft);">
+              <span style="font-size: 28px; font-weight: 700; color: var(--primary);">01</span>
+              <div>
+                <p class="h3" style="font-size: 26px;">Renvoyer vers la réservation</p>
+                <p class="small" style="margin-top: 4px;">Générer des redirections qualifiées vers le tunnel d'achat de billets Air France.</p>
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: baseline; padding: 12px 0; border-bottom: 1px solid var(--rule-soft);">
+              <span style="font-size: 28px; font-weight: 700; color: var(--primary);">02</span>
+              <div>
+                <p class="h3" style="font-size: 26px;">Générer du revenu publicitaire</p>
+                <p class="small" style="margin-top: 4px;">Intégrer des emplacements publicitaires imposés par la régie.</p>
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: baseline; padding: 12px 0;">
+              <span style="font-size: 28px; font-weight: 700; color: var(--primary);">03</span>
+              <div>
+                <p class="h3" style="font-size: 26px;">Sans donner le sentiment d'être vendu</p>
+                <p class="small" style="margin-top: 4px;">Le tout sans jamais rompre l'expérience éditoriale premium.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-frame contain" style="background: #fff; height: 100%; min-height: 0; padding: 16px;">
+          <img src="assets/envols/homepage.jpg" alt="EnVols, page d'accueil"/>
+        </div>
+      </div>
+    </div>
+    <div class="nav-strip">
+      <div class="nav-left">
+        <span class="nav-section">Études de cas</span>
+        <span class="nav-section-active">EnVols, 01 / 06</span>
+      </div>
+      <div class="nav-pageno"><div class="badge">09</div></div>
+    </div>
+  </section>
+
+
+  <!-- ════════════ 10 ENVOLS, OBJECTIFS & ARCHITECTURE ════════════ -->
+  <section data-label="10 EnVols, Architecture" style="background: var(--cream);">
+    <div class="slide-pad" style="padding-bottom: 196px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px;">
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <h1 class="h2">Repenser la grille, <br/>pas seulement les <em class="editorial">contenus</em>.</h1>
+          <span class="eyebrow">EnVols, 02, Objectifs &amp; Architecture Éditoriale</span>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 48px; flex: 1; min-height: 0;">
+        <div style="display: flex; flex-direction: column; gap: 28px; justify-content: center; min-height: 0;">
+          <p class="body">Le projet a consisté à concevoir une architecture éditoriale modulaire capable d'absorber, dans un même langage visuel, les contenus, les CTA de conversion et les espaces publicitaires.</p>
+
+          <div style="display: flex; flex-direction: column; gap: 18px; padding-top: 24px; border-top: 1px solid var(--rule);">
+            <div>
+              <p class="h3" style="font-size: 26px;">Structurer une offre dense</p>
+              <p class="small" style="margin-top: 4px;">+100 destinations, en français et en anglais, à hiérarchiser sans perdre l'utilisateur.</p>
+            </div>
+            <div>
+              <p class="h3" style="font-size: 26px;">Unifier print et digital</p>
+              <p class="small" style="margin-top: 4px;">Un même langage visuel entre le magazine (150k exemplaires) et la plateforme digitale.</p>
+            </div>
+            <div>
+              <p class="h3" style="font-size: 26px;">Intégrer sans rupture</p>
+              <p class="small" style="margin-top: 4px;">Articles, vidéo et audio dans un même parcours, avec un accès permanent à la conversion.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-frame contain" style="background: #fff; height: 100%; min-height: 0; padding: 16px;">
+          <img src="assets/envols/hero.png" alt="EnVols, grille éditoriale et emplacement publicitaire"/>
+        </div>
+      </div>
+    </div>
+    <div class="nav-strip">
+      <div class="nav-left">
+        <span class="nav-section">Études de cas</span>
+        <span class="nav-section-active">EnVols, 02 / 06</span>
+      </div>
+      <div class="nav-pageno"><div class="badge">10</div></div>
+    </div>
+  </section>
+
+
+  <!-- ════════════ 11 ENVOLS, IMMERSION PLATEFORME ════════════ -->
+  <section data-label="11 EnVols, Immersion">
+    <div class="slide-pad" style="padding-bottom: 196px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 36px;">
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <span class="eyebrow">EnVols, 03, Immersion Plateforme</span>
+          <h1 class="h2">D'un catalogue à une <em class="editorial">expérience</em> éditoriale fluide.</h1>
+        </div>
+      </div>
+
+      <p class="body" style="max-width: 1300px; margin-bottom: 28px;">La rubrique phare Travel Guide (contenus produits par Michelin Editions) répond à deux usages : l'utilisateur qui connaît déjà sa destination, et celui qui a besoin d'inspiration via des filtres (Quoi / Où / Quand / Combien).</p>
+
+      <div style="display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 32px; flex: 1; min-height: 0;">
+        <div class="mockup-frame contain" style="background: #fff; min-height: 0; padding: 14px;">
+          <img src="assets/envols/travel-guide-filters.jpg" alt="EnVols, Travel Guide, recherche à facettes"/>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 16px; min-height: 0;">
+          <div style="padding-top: 18px; border-top: 1px solid var(--rule);">
+            <p class="h3" style="font-size: 24px;">Deux profils, un seul outil</p>
+            <p class="small" style="margin-top: 6px;">Recherche directe pour qui connaît sa destination, filtres <br/>Quoi / Où / Quand / Combien pour qui a besoin d'inspiration.</p>
+          </div>
+          <img src="assets/envols/error-404.png" alt="EnVols, état vide, page d'erreur cohérente avec la marque" style="object-fit: contain; align-self: flex-start; width: 100%; max-height: 200px;"/>
+          <p class="small" style="color: var(--ink-mute);">Soigner l'échec aussi : l'état vide reste cohérent avec la marque plutôt que de rompre l'expérience.</p>
+        </div>
+      </div>
+    </div>
+    <div class="nav-strip">
+      <div class="nav-left">
+        <span class="nav-section">Études de cas</span>
+        <span class="nav-section-active">EnVols, 03 / 06</span>
+      </div>
+      <div class="nav-pageno"><div class="badge">11</div></div>
+    </div>
+  </section>
+
+
+  <!-- ════════════ 12 ENVOLS, CONVERSION & REVENUE ════════════ -->
+  <section data-label="12 EnVols, Conversion" style="background: var(--cream);">
+    <div class="slide-pad" style="padding-bottom: 196px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px;">
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <span class="eyebrow">EnVols, 04, Design pour la Conversion &amp; le Revenue</span>
+          <h1 class="h2">Vendre sans jamais <br/>rompre la <em class="editorial">lecture</em>.</h1>
+        </div>
+        <span class="mono" style="padding-bottom: 8px;">Lecture → Inspiration → Réservation</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; flex: 1; min-height: 0;">
+        <div class="mockup-frame contain" style="background: #fff; height: 100%; min-height: 0; padding: 16px;">
+          <img src="assets/envols/immediate-boarding.png" alt="EnVols, widget Immediate Boarding dans la grille éditoriale"/>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 28px; justify-content: center; min-height: 0;">
+          <p class="body">Le widget Immediate Boarding rompt volontairement avec la logique éditoriale pour donner un accès direct à la réservation, sans être vécu comme une interruption publicitaire.</p>
+
+          <div style="display: flex; flex-direction: column; gap: 18px; padding-top: 24px; border-top: 1px solid var(--rule);">
+            <div>
+              <p class="h3" style="font-size: 26px;">Immediate Boarding</p>
+              <p class="small" style="margin-top: 4px;">Icône avion, fond contrasté, CTA rouge : identifiable sans être vécu comme une interruption.</p>
+            </div>
+            <div>
+              <p class="h3" style="font-size: 26px;">CTA de fin d'article</p>
+              <p class="small" style="margin-top: 4px;">Trois CTA circulaires reliés par un tracé pointillé évoquant un trajet ; celui de réservation reprend la signature du widget d'accueil.</p>
+            </div>
+            <div>
+              <p class="h3" style="font-size: 26px;">Formats IAB réservés</p>
+              <p class="small" style="margin-top: 4px;">300x600 et 970x250 intégrés dès la conception de la grille, placés en fin de section pour limiter la rupture de lecture.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nav-strip">
+      <div class="nav-left">
+        <span class="nav-section">Études de cas</span>
+        <span class="nav-section-active">EnVols, 04 / 06</span>
+      </div>
+      <div class="nav-pageno"><div class="badge">12</div></div>
+    </div>
+  </section>
+
+
+  <!-- ════════════ 13 ENVOLS, CROSS-CANAL ════════════ -->
+  <section data-label="13 EnVols, Cross-canal">
+    <div class="slide-pad" style="padding-bottom: 196px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px;">
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <span class="eyebrow">EnVols, 05, Cross-canal &amp; Écosystème</span>
+          <h1 class="h2">Un écosystème qui s'alimente sans <em class="editorial">rupture</em>.</h1>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 0.78fr 1.22fr; gap: 48px; flex: 1; min-height: 0;">
+        <div style="display: flex; flex-direction: column; gap: 22px; justify-content: center; min-height: 0;">
+          <span class="mono">Print · Digital · Newsletter · Social</span>
+          <p class="body">Chaque canal alimente l'autre, sans rupture d'expérience : magazine print (150k exemplaires), plateforme digitale, newsletter et réseaux sociaux.</p>
+
+          <div style="display: flex; flex-direction: column; gap: 18px; padding-top: 24px; border-top: 1px solid var(--rule);">
+            <div>
+              <p class="h3" style="font-size: 26px;">Mobile, consommation rapide</p>
+              <p class="small" style="margin-top: 4px;">L'UX web favorise la lecture rapide et le scroll court sur mobile.</p>
+            </div>
+            <div>
+              <p class="h3" style="font-size: 26px;">Desktop, « slow reading »</p>
+              <p class="small" style="margin-top: 4px;">Une lecture plus longue est permise sur desktop pour maximiser le temps de session.</p>
+            </div>
+            <div>
+              <p class="h3" style="font-size: 26px;">Un gabarit par rubrique</p>
+              <p class="small" style="margin-top: 4px;">Évasion, Inspiration, Papilles, Styles : chaque rubrique a son gabarit social, pour rester reconnaissable dans un fil.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-frame contain" style="background: #fff; min-height: 0; padding: 16px;">
+          <img src="assets/envols/social-covers.png" alt="EnVols, écosystème social media"/>
+        </div>
+      </div>
+    </div>
+    <div class="nav-strip">
+      <div class="nav-left">
+        <span class="nav-section">Études de cas</span>
+        <span class="nav-section-active">EnVols, 05 / 06</span>
+      </div>
+      <div class="nav-pageno"><div class="badge">13</div></div>
+    </div>
+  </section>
+
+
+  <!-- ════════════ 14 ENVOLS, IMPACT ════════════ -->
+  <section data-label="14 EnVols, Impact" style="background: var(--primary); color: #fff;">
+    <div class="slide-pad" style="padding-bottom: 196px;">
+      <div style="display: flex; flex-direction: column; gap: 28px; margin-bottom: 56px;">
+        <span class="eyebrow" style="color: rgba(255,255,255,0.65);">EnVols, 06, Impact &amp; Takeaway</span>
+        <h1 class="h2" style="color: #fff;">Une forte adhésion <br/>à l'écosystème unifié.</h1>
+        <p class="body" style="color: rgba(255,255,255,0.78); max-width: 1150px;">En traitant la conversion et la publicité comme des éléments de grille à part entière plutôt que des ajouts disgracieux, la plateforme reste un média qu'on a envie de lire, pas un tunnel de vente déguisé.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; flex: 1; align-content: center;">
+        <div>
+          <div style="font-size: 144px; line-height: 0.9; font-weight: 700; letter-spacing: -0.04em; color: #fff;">1<span style="font-size: 0.6em;">M</span></div>
+          <p class="body" style="color: #fff; margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.25); font-size: 24px;">visiteurs uniques <br/>par mois</p>
+        </div>
+        <div>
+          <div style="font-size: 144px; line-height: 0.9; font-weight: 700; letter-spacing: -0.04em; color: #fff;">4<span style="font-size: 0.6em;">M</span></div>
+          <p class="body" style="color: #fff; margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.25); font-size: 24px;">pages vues <br/>mensuelles</p>
+        </div>
+        <div>
+          <div style="font-size: 144px; line-height: 0.9; font-weight: 700; letter-spacing: -0.04em; color: #fff;">150<span style="font-size: 0.55em;">k</span></div>
+          <p class="body" style="color: #fff; margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.25); font-size: 24px;">abonnés <br/>à la newsletter</p>
+        </div>
+        <div>
+          <div style="font-size: 144px; line-height: 0.9; font-weight: 700; letter-spacing: -0.04em; color: #fff;">+80<span style="font-size: 0.55em;">k</span></div>
+          <p class="body" style="color: #fff; margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.25); font-size: 24px;">followers sur <br/>les réseaux sociaux</p>
+        </div>
+      </div>
+    </div>
+    <div class="nav-strip dark">
+      <div class="nav-left">
+        <span class="nav-section">Études de cas</span>
+        <span class="nav-section-active">EnVols, 06 / 06</span>
+      </div>
+      <div class="nav-pageno"><div class="badge" style="background: #fff; color: var(--primary);">14</div></div>
+    </div>
+  </section>
+
+
+<!-- ════════════ 21 SMARTCH, CONTEXTE ════════════ -->
+  <section data-label="15 Smartch, Contexte" style="background: var(--cream);">
+    <div class="slide-pad" style="padding-bottom: 196px;">
+      <div style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 40px;">
+        <span class="eyebrow">Smartch, 01, Contexte &amp; Cadrage du Problème</span>
+        <h1 class="h2">Refondre un site vitrine, construire <br/>un <em class="editorial">système</em> de marque.</h1>
+        <p class="body" style="max-width: 1650px;">Repenser l'architecture de l'information du site vitrine et créer un Brand System global (Web, Présentations, Social Media) garantissant la cohérence de la marque, tout en optimisant la conversion via un design d'interaction pointu.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px;">
+        <div style="padding: 20px 0; border-top: 1px solid var(--rule);">
+          <span class="eyebrow muted">Client</span>
+          <p class="h3" style="margin-top: 8px; font-size: 28px;">Smartch</p>
+          <p class="small" style="margin-top: 4px;">Agence spécialisée dans le learning et la formation digitale</p>
+        </div>
+        <div style="padding: 20px 0; border-top: 1px solid var(--rule);">
+          <span class="eyebrow muted">Rôle</span>
+          <p class="h3" style="margin-top: 8px; font-size: 28px;">Product Designer Senior</p>
+          <p class="small" style="margin-top: 4px;">Architecture, UX/UI, Design d'Interaction</p>
+        </div>
+        <div style="padding: 20px 0; border-top: 1px solid var(--rule);">
+          <span class="eyebrow muted">Besoin initial</span>
+          <p class="h3" style="margin-top: 8px; font-size: 28px;">Moderniser l'identité, clarifier l'offre</p>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; flex: 1; align-items: stretch; min-height: 0;">
+        <div style="display: flex; flex-direction: column; gap: 20px; min-height: 0;">
+          <span class="eyebrow muted">Le problème systémique identifié</span>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--rule-soft);">
+              <span style="font-size: 28px; font-weight: 700; color: var(--primary);">01</span>
+              <div>
+                <p class="h3" style="font-size: 26px;">Fragmentation visuelle</p>
+                <p class="small" style="margin-top: 4px;">Au-delà du site web, l'agence souffrait d'une fragmentation visuelle sur ses autres points de contact, propositions commerciales, réseaux sociaux.</p>
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--rule-soft);">
+              <span style="font-size: 28px; font-weight: 700; color: var(--primary);">02</span>
+              <div>
+                <p class="h3" style="font-size: 26px;">Manque de dynamisme</p>
+                <p class="small" style="margin-top: 4px;">L'ancienne interface web manquait de dynamisme et peinait à guider l'utilisateur vers la prise de contact.</p>
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: baseline; padding: 10px 0;">
+              <span style="font-size: 28px; font-weight: 700; color: var(--primary);">03</span>
+              <div>
+                <p class="h3" style="font-size: 26px;">Génération de leads</p>
+                <p class="small" style="margin-top: 4px;">L'interface peinait à convertir la visite en prise de contact.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-frame contain" style="background: #fff; height: 420px; min-height: 0; padding: 20px;">
+          <img src="assets/smartch/website.png" alt="Smartch, site vitrine" style="object-fit: cover; object-position: top center;"/>
+        </div>
+      </div>
+    </div>
+    <div class="nav-strip">
+      <div class="nav-left">
+        <span class="nav-section">Études de cas</span>
+        <span class="nav-section-active">Smartch, 01 / 04</span>
+      </div>
+      <div class="nav-pageno"><div class="badge">15</div></div>
+    </div>
+  </section>
+
+
+  <!-- ════════════ 22 SMARTCH, MOTION & INTERACTION ════════════ -->
+  <section data-label="16 Smartch, Motion">
+    <div class="slide-pad" style="padding-bottom: 196px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 56px;">
+        <div style="display: flex; flex-direction: column; gap: 20px; max-width: 900px;">
+          <span class="eyebrow">Smartch, 02, Démarche &amp; Arbitrages UX/UI</span>
+          <h1 class="h2">Le motion design comme <em class="editorial">levier</em> de conversion.</h1>
+        </div>
+        <span class="mono" style="padding-bottom: 8px;">Guidage cognitif → Affordance → Conversion</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 48px; flex: 1; min-height: 0;">
+        <div style="display: flex; flex-direction: column; gap: 24px; justify-content: flex-start; min-height: 0;">
+          <p class="body">Restructuration complète de l'arborescence et des parcours, pour passer d'un site « plaquette » à une architecture claire et guidée.</p>
+
+          <div style="display: flex; flex-direction: column; gap: 18px; padding-top: 24px; border-top: 1px solid var(--rule);">
+            <div>
+              <p class="h3" style="font-size: 26px;">Guidage cognitif</p>
+              <p class="small" style="margin-top: 4px;">Animation séquentielle des icônes et du slider de compétences pour guider la lecture.</p>
+            </div>
+            <div>
+              <p class="h3" style="font-size: 26px;">Feedback &amp; affordance</p>
+              <p class="small" style="margin-top: 4px;">Survol magnétique sur les labels du formulaire : un feedback qui réduit la friction perçue.</p>
+            </div>
+            <div>
+              <p class="h3" style="font-size: 26px;">Ancre persistante</p>
+              <p class="small" style="margin-top: 4px;">Sticky discrète en bas à droite, raccourci vers le formulaire sans interrompre la lecture.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-frame contain" style="background: #fff; height: 761px; min-height: 0; padding: 24px;">
+          <img src="assets/smartch/website.png" alt="Smartch, interactions et micro-animations" style="object-fit: cover; object-position: 20% center;"/>
+        </div>
+      </div>
+    </div>
+    <div class="nav-strip">
+      <div class="nav-left">
+        <span class="nav-section">Études de cas</span>
+        <span class="nav-section-active">Smartch, 02 / 04</span>
+      </div>
+      <div class="nav-pageno"><div class="badge">16</div></div>
+    </div>
+  </section>
+
+
+  <!-- ════════════ 23 SMARTCH, BRAND SYSTEM ════════════ -->
+  <section data-label="17 Smartch, Brand System" style="background: var(--cream);">
+    <div class="slide-pad" style="padding-bottom: 196px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px;">
+        <div style="display: flex; flex-direction: column; gap: 20px; max-width: 1150px;">
+          <span class="eyebrow">Smartch, 03, Brand System &amp; Scalabilité</span>
+          <h1 class="h2">Un système de marque, <em class="editorial">du web</em> au pitch deck.</h1>
+        </div>
+        <span class="mono" style="padding-bottom: 8px; padding-left: 32px;">Design Tokens → Slides → Social Media</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 48px; flex: 1; min-height: 0;">
+        <div style="display: flex; flex-direction: column; gap: 24px; justify-content: flex-start; min-height: 0;">
+          <p class="body">Pour éviter que cette nouvelle charte graphique ne se dégrade avec le temps, elle a été pensée comme un système modulaire applicable au-delà du produit web.</p>
+
+          <div style="display: flex; flex-direction: column; gap: 18px; padding-top: 24px; border-top: 1px solid var(--rule);">
+            <div>
+              <p class="h3" style="font-size: 26px;">De l'UI au pitch deck</p>
+              <p class="small" style="margin-top: 4px;">Traduction des Design Tokens du site web vers des gabarits de présentation : titres, présentation d'équipe, business cases, plannings, mêmes codes visuels.</p>
+            </div>
+            <div>
+              <p class="h3" style="font-size: 26px;">Templates Social Media</p>
+              <p class="small" style="margin-top: 4px;">Déclinaison du système via des grilles standardisées, pensées pour absorber différents volumes de texte de manière élégante.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-rows: 1fr 1fr; gap: 16px; min-height: 0;">
+          <div class="mockup-frame contain" style="background: #fff; padding: 16px; min-height: 0;">
+            <img src="assets/smartch/presentations.png" alt="Smartch, système de pitch decks"/>
+          </div>
+          <div class="mockup-frame contain" style="background: #fff; padding: 16px; min-height: 0;">
+            <img src="assets/smartch/social-media.png" alt="Smartch, templates réseaux sociaux"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nav-strip">
+      <div class="nav-left">
+        <span class="nav-section">Études de cas</span>
+        <span class="nav-section-active">Smartch, 03 / 04</span>
+      </div>
+      <div class="nav-pageno"><div class="badge">17</div></div>
+    </div>
+  </section>
+
+
+  <!-- ════════════ 24 SMARTCH, IMPACT ════════════ -->
+  <section data-label="18 Smartch, Impact" style="background: var(--primary); color: #fff;">
+    <div class="slide-pad" style="padding-bottom: 196px;">
+      <div style="display: flex; flex-direction: column; gap: 28px; margin-bottom: 80px;">
+        <span class="eyebrow" style="color: rgba(255,255,255,0.65);">Smartch, 04, Impact Opérationnel &amp; Scalabilité</span>
+        <h1 class="h2" style="color: #fff;">Une expérience cohérente, <br/>de LinkedIn au closing.</h1>
+        <p class="body" style="color: rgba(255,255,255,0.78); max-width: 1100px;">Le système garantit une expérience sans couture pour le client final : de la découverte sur LinkedIn, à l'exploration interactive sur le site web, jusqu'à la réception de la proposition commerciale.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; flex: 1; align-content: center;">
+        <div>
+          <div style="font-size: 78px; line-height: 0.95; font-weight: 700; letter-spacing: -0.02em; color: #fff;">Conversion</div>
+          <p class="body" style="color: #fff; margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.25); font-size: 24px;">Interactions magnétiques et ancre persistante : un parcours plus organique vers le formulaire de contact.</p>
+        </div>
+        <div>
+          <div style="font-size: 78px; line-height: 0.95; font-weight: 700; letter-spacing: -0.02em; color: #fff;">Vélocité</div>
+          <p class="body" style="color: #fff; margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.25); font-size: 24px;">Les commerciaux génèrent des pitch decks en quelques minutes ; le marketing anime les réseaux sociaux en autonomie.</p>
+        </div>
+        <div>
+          <div style="font-size: 78px; line-height: 0.95; font-weight: 700; letter-spacing: -0.02em; color: #fff;">Cohérence</div>
+          <p class="body" style="color: #fff; margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.25); font-size: 24px;">Une expérience de marque « end-to-end », sans couture entre tous les points de contact.</p>
+        </div>
+      </div>
+    </div>
+    <div class="nav-strip dark">
+      <div class="nav-left">
+        <span class="nav-section">Études de cas</span>
+        <span class="nav-section-active">Smartch, 04 / 04</span>
+      </div>
+      <div class="nav-pageno"><div class="badge" style="background: #fff; color: var(--primary);">18</div></div>
+    </div>
+  </section>
+
+
+  
+<!-- AUTRICE -->
+  <section data-label="19 Autrice, Contexte">
+    <div class="slide-pad" style="padding-bottom:196px">
+      <div style="display:flex;flex-direction:column;gap:28px;margin-bottom:44px">
+        <span class="eyebrow">Autrice.ai, 01, Contexte &amp; Cadrage du Problème</span>
+        <h1 class="h2">Construire la confiance, <br/>pas seulement l'<em class="editorial">outil</em>.</h1>
+        <p class="body" style="max-width:1240px">Concevoir le point d'entrée d'un nouvel outil SaaS de création de formations par IA, en maximisant la génération de leads qualifiés via une structure orientée conversion et une continuité stricte avec le Design System du produit.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:36px">
+        <div style="padding:20px 0;border-top:1px solid var(--rule)"><span class="eyebrow muted">Client</span><p class="h3" style="margin-top:8px;font-size:26px">Autrice.ai</p><p class="small" style="margin-top:4px">SaaS B2B, création de parcours de formation par IA</p></div>
+        <div style="padding:20px 0;border-top:1px solid var(--rule)"><span class="eyebrow muted">Rôle</span><p class="h3" style="margin-top:8px;font-size:26px">Product Designer</p><p class="small" style="margin-top:4px">Landing page, architecture de conversion</p></div>
+        <div style="padding:20px 0;border-top:1px solid var(--rule)"><span class="eyebrow muted">Défi</span><p class="h3" style="margin-top:8px;font-size:26px">Confiance, pas prix</p><p class="small" style="margin-top:4px">Marché B2B sceptique face à l'IA</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;flex:1;align-items:stretch;min-height:0">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <span class="eyebrow muted">Le problème</span>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div style="display:grid;grid-template-columns:56px 1fr;gap:20px;padding:10px 0;border-bottom:1px solid var(--rule-soft)"><span style="font-size:28px;font-weight:700;color:var(--primary)">01</span><div><p class="h3" style="font-size:24px">Le produit</p><p class="small" style="margin-top:4px">Une solution B2B qui exploite l'IA pour générer et structurer des parcours de formation (L&amp;D).</p></div></div>
+            <div style="display:grid;grid-template-columns:56px 1fr;gap:20px;padding:10px 0;border-bottom:1px solid var(--rule-soft)"><span style="font-size:28px;font-weight:700;color:var(--primary)">02</span><div><p class="h3" style="font-size:24px">Le défi d'acquisition</p><p class="small" style="margin-top:4px">Crainte de la complexité ou de la substitution humaine : le frein est la confiance, pas le prix.</p></div></div>
+            <div style="display:grid;grid-template-columns:56px 1fr;gap:20px;padding:10px 0"><span style="font-size:28px;font-weight:700;color:var(--primary)">03</span><div><p class="h3" style="font-size:24px">L'enjeu produit</p><p class="small" style="margin-top:4px">Déconstruire les biais cognitifs liés à l'IA et générer des demandes de test.</p></div></div>
+          </div>
+        </div>
+        <div class="mockup-frame contain" style="background:#fff;height:100%;min-height:0;padding:16px"><img src="assets/autrice/hero.png" alt="Autrice.ai, landing page, hero"/></div>
+      </div>
+    </div>
+    <div class="nav-strip"><div class="nav-left"><span class="nav-section">Études de cas</span><span class="nav-section-active">Autrice.ai, 01 / 05</span></div><div class="nav-pageno"><div class="badge">19</div></div></div>
+  </section>
+
+  <section data-label="20 Autrice, Conversion" style="background:var(--cream)">
+    <div class="slide-pad" style="padding-bottom:196px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px">
+        <div style="display:flex;flex-direction:column;gap:20px"><span class="eyebrow">Autrice.ai, 02, Stratégie de Conversion &amp; Arbitrages Design</span><h1 class="h2">Traiter la page comme <br/>une <em class="editorial">extension</em> du produit.</h1></div>
+        <span class="mono" style="padding-bottom:8px">Accroche → Réassurance → Bento UI</span>
+      </div>
+      <div style="display:grid;grid-template-columns:0.85fr 1.15fr;gap:48px;flex:1;min-height:0">
+        <div style="display:flex;flex-direction:column;gap:24px;justify-content:center;min-height:0">
+          <p class="body">L'approche a consisté à traiter cette page comme une extension du produit lui-même, en appliquant des logiques de divulgation progressive (Progressive Disclosure).</p>
+          <div style="display:flex;flex-direction:column;gap:18px;padding-top:24px;border-top:1px solid var(--rule)">
+            <div><p class="h3" style="font-size:26px">Architecture du funnel</p><p class="small" style="margin-top:4px">Accroche sur le bénéfice primaire, réassurance immédiate (social proof), puis fonctionnalités en Bento UI pour la scannabilité.</p></div>
+            <div><p class="h3" style="font-size:26px">Ancrage cognitif</p><p class="small" style="margin-top:4px">Équilibre entre abstractions UI et photos d'équipes en collaboration : l'IA positionnée comme un « copilote », pas un remplaçant.</p></div>
+          </div>
+        </div>
+        <div class="mockup-frame contain" style="background:#fff;height:100%;min-height:0;padding:16px"><img src="assets/autrice/bento.png" alt="Autrice.ai, ancrage cognitif, abstractions et photographies"/></div>
+      </div>
+    </div>
+    <div class="nav-strip"><div class="nav-left"><span class="nav-section">Études de cas</span><span class="nav-section-active">Autrice.ai, 02 / 05</span></div><div class="nav-pageno"><div class="badge">20</div></div></div>
+  </section>
+
+  <section data-label="21 Autrice, Design System">
+    <div class="slide-pad" style="padding-bottom:196px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px">
+        <div style="display:flex;flex-direction:column;gap:20px"><span class="eyebrow">Autrice.ai, 03, Continuité Systémique &amp; Design Tokens</span><h1 class="h2">Du produit à l'acquisition, <br/>sans <em class="editorial">rupture</em>.</h1></div>
+        <span class="mono" style="padding-bottom:8px">Design Tokens → Composants natifs</span>
+      </div>
+      <div style="display:grid;grid-template-columns:0.85fr 1.15fr;gap:48px;flex:1;min-height:0">
+        <div style="display:flex;flex-direction:column;gap:24px;justify-content:center;min-height:0">
+          <p class="body">Plutôt qu'une identité visuelle isolée, la landing page a été conçue comme une extension directe du produit SaaS, assurant une cohérence absolue tout au long du parcours.</p>
+          <div style="display:flex;flex-direction:column;gap:18px;padding-top:24px;border-top:1px solid var(--rule)">
+            <div><p class="h3" style="font-size:26px">Héritage des Design Tokens</p><p class="small" style="margin-top:4px">Palette, hiérarchie typographique, élévations : les mêmes variables produit, la même architecture CSS pour les développeurs.</p></div>
+            <div><p class="h3" style="font-size:26px">Parité design / code</p><p class="small" style="margin-top:4px">Composants hérités de l'interface produit, adaptés en blocs modulaires (Hero, Bento features, FAQ) en CSS Grid et Flexbox.</p></div>
+          </div>
+        </div>
+        <div class="mockup-frame contain" style="background:#fff;height:100%;min-height:0;padding:16px"><img src="assets/autrice/bento-cards.png" alt="Autrice.ai, composants Bento UI"/></div>
+      </div>
+    </div>
+    <div class="nav-strip"><div class="nav-left"><span class="nav-section">Études de cas</span><span class="nav-section-active">Autrice.ai, 03 / 05</span></div><div class="nav-pageno"><div class="badge">21</div></div></div>
+  </section>
+
+  <section data-label="22 Autrice, Presentations" style="background:var(--cream)">
+    <div class="slide-pad" style="padding-bottom:196px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px">
+        <div style="display:flex;flex-direction:column;gap:20px"><span class="eyebrow">Autrice.ai, 04, Kits de Déploiement Marketing</span><h1 class="h2">Le design system, jusqu'aux <br/><em class="editorial">présentations</em> et réseaux sociaux.</h1></div>
+        <span class="mono" style="padding-bottom:8px">Slides → Social Media</span>
+      </div>
+      <div style="display:grid;grid-template-columns:0.85fr 1.15fr;gap:48px;flex:1;min-height:0">
+        <div style="display:flex;flex-direction:column;gap:24px;justify-content:center;min-height:0">
+          <p class="body">Le même système de composants, décliné pour l'équipe marketing : supports de présentation et contenus réseaux sociaux, sans nouvelle charte à maintenir.</p>
+          <div style="display:flex;flex-direction:column;gap:18px;padding-top:24px;border-top:1px solid var(--rule)">
+            <div><p class="h3" style="font-size:26px">Kits de présentation</p><p class="small" style="margin-top:4px">Gabarits de slides réutilisant les mêmes codes visuels que le produit et la landing page.</p></div>
+            <div><p class="h3" style="font-size:26px">Contenus réseaux sociaux</p><p class="small" style="margin-top:4px">Déclinaisons modulaires pour l'équipe marketing, cohérentes avec le design system.</p></div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-rows:1fr 1fr;gap:16px;min-height:0">
+          <div class="mockup-frame contain" style="background:#fff;min-height:0;padding:12px"><img src="assets/autrice/presentations.jpg" alt="Autrice.ai, kit de présentation"/></div>
+          <div class="mockup-frame contain" style="background:#fff;min-height:0;padding:12px"><img src="assets/autrice/social-content.jpg" alt="Autrice.ai, contenus réseaux sociaux"/></div>
+        </div>
+      </div>
+    </div>
+    <div class="nav-strip"><div class="nav-left"><span class="nav-section">Études de cas</span><span class="nav-section-active">Autrice.ai, 04 / 05</span></div><div class="nav-pageno"><div class="badge">22</div></div></div>
+  </section>
+
+  <section data-label="23 Autrice, Impact" style="background:var(--primary);color:#fff">
+    <div class="slide-pad" style="padding-bottom:196px">
+      <div style="display:flex;flex-direction:column;gap:28px;margin-bottom:56px">
+        <span class="eyebrow" style="color:rgba(255,255,255,0.65)">Autrice.ai, 05, Impact Opérationnel &amp; Scalabilité</span>
+        <h1 class="h2" style="color:#fff">Une seule base de composants, <br/>du produit au marketing.</h1>
+        <p class="body" style="color:rgba(255,255,255,0.78);max-width:1150px">En mutualisant l'architecture visuelle entre le produit et le site marketing, l'équipe technique n'a plus eu à maintenir deux bases de composants distinctes.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;flex:1;align-content:center">
+        <div><div style="font-size:78px;font-weight:700;letter-spacing:-0.02em;color:#fff">Dette technique</div><p class="body" style="color:#fff;margin-top:24px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.25);font-size:24px">Une mise à jour de token se répercute de manière centralisée sur tout l'écosystème.</p></div>
+        <div><div style="font-size:78px;font-weight:700;letter-spacing:-0.02em;color:#fff">Vélocité</div><p class="body" style="color:#fff;margin-top:24px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.25);font-size:24px">Moins d'allers-retours au handoff : les développeurs assemblent la page depuis la librairie existante.</p></div>
+        <div><div style="font-size:78px;font-weight:700;letter-spacing:-0.02em;color:#fff">Cohérence</div><p class="body" style="color:#fff;margin-top:24px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.25);font-size:24px">Aucune rupture visuelle entre la landing page et l'onboarding produit.</p></div>
+      </div>
+    </div>
+    <div class="nav-strip dark"><div class="nav-left"><span class="nav-section">Études de cas</span><span class="nav-section-active">Autrice.ai, 05 / 05</span></div><div class="nav-pageno"><div class="badge" style="background:#fff;color:var(--primary)">23</div></div></div>
+  </section>
+
+<!-- ════════════ 15 DIOR, LE DÉFI ════════════ -->
+  <section data-label="24 DIOR, Le Défi">
+    <div class="slide-pad" style="padding-bottom: 196px;">
+      <div style="display: flex; flex-direction: column; gap: 28px; margin-bottom: 48px;">
+        <span class="eyebrow">DIOR, 01, Contexte &amp; Défi</span>
+        <h1 class="h2">L'excellence retail au service <br/>de la <em class="editorial">formation</em>.</h1>
+        <p class="body" style="max-width: 1200px;">Transformer la plateforme d'apprentissage en un véritable outil de pilotage Retail : sécuriser l'onboarding et redonner le contrôle opérationnel aux managers de zone.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 40px;">
+        <div style="padding: 20px 0; border-top: 1px solid var(--rule);">
+          <span class="eyebrow muted">Client</span>
+          <p class="h3" style="margin-top: 8px; font-size: 30px;">Dior</p>
+        </div>
+        <div style="padding: 20px 0; border-top: 1px solid var(--rule);">
+          <span class="eyebrow muted">Rôle</span>
+          <p class="h3" style="margin-top: 8px; font-size: 30px;">Product Designer</p>
+          <p class="small" style="margin-top: 4px;">UX/UI, conception des flux, Design System</p>
+        </div>
+        <div style="padding: 20px 0; border-top: 1px solid var(--rule);">
+          <span class="eyebrow muted">Utilisateurs</span>
+          <p class="h3" style="margin-top: 8px; font-size: 30px;">Learners, Managers, Admins</p>
+          <p class="small" style="margin-top: 4px;">Plateforme B2B (LMS) internationale, Beauty Consultants &amp; managers de zone</p>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; flex: 1; align-items: stretch; min-height: 0;">
+        <div style="display: flex; flex-direction: column; gap: 20px; min-height: 0;">
+          <span class="eyebrow muted">Les frictions de l'outil historique</span>
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <div style="display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--rule-soft);">
+              <span style="font-size: 28px; font-weight: 700; color: var(--primary);">01</span>
+              <div>
+                <p class="h3" style="font-size: 26px;">Tunnel fragmenté</p>
+                <p class="small" style="margin-top: 4px;">Un tunnel morcelé et des emails non contextualisés : un taux d'abandon élevé.</p>
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--rule-soft);">
+              <span style="font-size: 28px; font-weight: 700; color: var(--primary);">02</span>
+              <div>
+                <p class="h3" style="font-size: 26px;">Erreurs de rattachement</p>
+                <p class="small" style="margin-top: 4px;">Des rattachements hiérarchiques erronés : conseillers liés au mauvais point de vente.</p>
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: baseline; padding: 14px 0;">
+              <span style="font-size: 28px; font-weight: 700; color: var(--primary);">03</span>
+              <div>
+                <p class="h3" style="font-size: 26px;">Managers sans visibilité</p>
+                <p class="small" style="margin-top: 4px;">Aucun suivi de l'activation des équipes, ni pilotage des accès.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-frame dior contain" style="height: 100%; padding: 16px;">
+          <img src="assets/dior/01-registration-screens.png" alt="DIOR, écrans d'inscription"/>
+        </div>
+      </div>
+    </div>
+    <div class="nav-strip">
+      <div class="nav-left">
+        <span class="nav-section">Études de cas</span>
+        <span class="nav-section-active">DIOR, 01 / 06</span>
+      </div>
+      <div class="nav-pageno"><div class="badge">24</div></div>
+    </div>
+  </section>
+
+
+
+  <!-- ════════════ DIOR, TUNNEL D'INSCRIPTION (nouvelle slide) ════════════ -->
+  <section data-label="25 DIOR, Tunnel d'inscription" style="background: var(--cream);">
+    <div class="slide-pad" style="padding-bottom: 196px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px;">
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <span class="eyebrow">DIOR, 02, Reconstruction du Parcours</span>
+          <h1 class="h2">Un tunnel morcelé, remis <em class="editorial">bout à bout</em>.</h1>
+        </div>
+        <span class="mono" style="padding-bottom: 8px;">4 langues · 1 parcours</span>
+      </div>
+
+      <div class="flow-strip" style="margin-bottom: 40px;">
+        <div class="apm-step on">
+          <div class="apm-node">01</div>
+          <div class="apm-cap">Point de vente</div>
+          <div class="apm-sub">Détaillant, ville, POS</div>
+        </div>
+        <div class="apm-conn"></div>
+        <div class="apm-step on">
+          <div class="apm-node">02</div>
+          <div class="apm-cap">Profil apprenant</div>
+          <div class="apm-sub">Identité, expertise, opt-in</div>
+        </div>
+        <div class="apm-conn"></div>
+        <div class="apm-step on">
+          <div class="apm-node">03</div>
+          <div class="apm-cap">Demande soumise</div>
+          <div class="apm-sub">Accusé de réception</div>
+        </div>
+        <div class="apm-conn"></div>
+        <div class="apm-step on">
+          <div class="apm-node">04</div>
+          <div class="apm-cap">Modération</div>
+          <div class="apm-sub">Le manager tranche</div>
+        </div>
+        <div class="apm-conn"></div>
+        <div class="apm-step on">
+          <div class="apm-node">05</div>
+          <div class="apm-cap">Compte activé</div>
+          <div class="apm-sub">Identifiants transmis</div>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 44px; flex: 1; min-height: 0;">
+        <div style="display: flex; flex-direction: column; gap: 20px; min-height: 0; justify-content: center;">
+          <p class="body">Le rattachement hiérarchique était la source principale des erreurs. Il devient la toute première étape, et non plus un champ libre saisi en fin de parcours.</p>
+
+          <div style="display: flex; flex-direction: column; gap: 16px; padding-top: 22px; border-top: 1px solid var(--rule);">
+            <div>
+              <p class="h3" style="font-size: 26px;">Sélection en cascade</p>
+              <p class="small" style="margin-top: 4px;">Détaillant, puis ville et code postal, puis point de vente : le conseiller ne peut plus se rattacher au mauvais magasin.</p>
+            </div>
+            <div>
+              <p class="h3" style="font-size: 26px;">Validation au fil de l'eau</p>
+              <p class="small" style="margin-top: 4px;">Les erreurs sont signalées au champ, pas après l'envoi du formulaire.</p>
+            </div>
+            <div>
+              <p class="h3" style="font-size: 26px;">Quatre langues, un seul gabarit</p>
+              <p class="small" style="margin-top: 4px;">FR, EN, ES, IT : les mêmes composants absorbent des longueurs de libellés très différentes sans casser la mise en page.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-frame dior contain" style="min-height: 0; padding: 16px;">
+          <img src="assets/dior/03-registration-flow.png" alt="DIOR, écrans du tunnel d'inscription, sélection du point de vente et informations apprenant"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ 17 DIOR, EXPÉRIENCE MANAGER ════════════ -->
+  <section data-label="26 DIOR, Manager">
+    <div class="slide-pad" style="padding-bottom: 196px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px;">
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <span class="eyebrow">DIOR, 03, Modération &amp; Interface Manager</span>
+          <h1 class="h2">Le contrôle absolu, <em class="editorial">sans</em> friction.</h1>
+        </div>
+        <span class="mono" style="padding-bottom: 8px;">Temps de traitement, ↓</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; flex: 1;">
+        <div class="mockup-frame dior contain" style="padding: 24px;">
+          <img src="assets/dior/04-moderation-screens.png" alt="DIOR, écrans de modération"/>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 28px; justify-content: center;">
+          <p class="body">Un tableau de bord strictement opérationnel pour fluidifier la gestion des accès et réduire le temps de traitement administratif.</p>
+
+          <div style="display: flex; flex-direction: column; gap: 18px; padding-top: 24px; border-top: 1px solid var(--rule);">
+            <div>
+              <p class="h3" style="font-size: 26px;">Priorisation de la donnée</p>
+              <p class="small" style="margin-top: 4px;">Le dashboard centralise l'état des équipes et isole automatiquement les actions requises (« Learners waiting for moderation »).</p>
+            </div>
+            <div>
+              <p class="h3" style="font-size: 26px;">Décision en un clic</p>
+              <p class="small" style="margin-top: 4px;">Des flux de validation, Approuver, Refuser, Réactiver, via des modales contextuelles.</p>
+            </div>
+            <div>
+              <p class="h3" style="font-size: 26px;">Feedback immédiat</p>
+              <p class="small" style="margin-top: 4px;">Chaque action génère une confirmation visuelle instantanée, sans rafraîchissement de l'interface.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nav-strip">
+      <div class="nav-left">
+        <span class="nav-section">Études de cas</span>
+        <span class="nav-section-active">DIOR, 03 / 06</span>
+      </div>
+      <div class="nav-pageno"><div class="badge">25</div></div>
+    </div>
+  </section>
+
+
+
+  <!-- ════════════ DIOR, EXPÉRIENCE APPRENANT MOBILE (nouvelle slide) ════════════ -->
+  <section data-label="27 DIOR, Apprenant mobile">
+    <div class="slide-pad" style="padding-bottom: 196px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px;">
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <span class="eyebrow">DIOR, 04, Expérience Apprenant &amp; Engagement</span>
+          <h1 class="h2">Conçu pour le <em class="editorial">terrain</em>, entre deux clientes.</h1>
+        </div>
+        <span class="mono" style="padding-bottom: 8px;">Mobile first · Beauty Consultants</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.12fr 0.88fr; gap: 44px; flex: 1; min-height: 0;">
+        <div class="mockup-frame dior contain" style="min-height: 0; padding: 20px;">
+          <img src="assets/dior/05-learner-mobile.png" alt="DIOR, écrans mobiles apprenant, missions, classement et attribution de points"/>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 20px; justify-content: center; min-height: 0;">
+          <p class="body">Les Beauty Consultants consultent la plateforme en boutique, sur mobile, par sessions courtes. L'interface est donc pensée en priorité pour l'écran vertical, et non déclinée depuis le desktop.</p>
+
+          <div style="display: flex; flex-direction: column; gap: 16px; padding-top: 22px; border-top: 1px solid var(--rule);">
+            <div>
+              <p class="h3" style="font-size: 26px;">Une couche d'engagement, en or</p>
+              <p class="small" style="margin-top: 4px;">Missions, points, taux de complétion et classement mensuel : un accent doré vient qualifier la progression, sans toucher au noir et blanc de la Maison.</p>
+            </div>
+            <div>
+              <p class="h3" style="font-size: 26px;">Une information par écran</p>
+              <p class="small" style="margin-top: 4px;">Chaque vue répond à une seule question : où j'en suis, que faire ensuite, où je me situe.</p>
+            </div>
+            <div>
+              <p class="h3" style="font-size: 26px;">Le manager dans la boucle</p>
+              <p class="small" style="margin-top: 4px;">L'attribution de points depuis la fiche apprenant relie le pilotage managérial et l'expérience de l'apprenant, dans le même système de composants.</p>
+            </div>
+          </div>
+
+          <div class="proof-row" style="padding-top: 8px;">
+            <span class="proof-chip">Responsive</span>
+            <span class="proof-chip">iOS / Android</span>
+            <span class="proof-chip">Design System</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ 18 DIOR, DESIGN SYSTEM ════════════ -->
+  <section data-label="28 DIOR, Design System" style="background: var(--cream);">
+    <div class="slide-pad" style="padding-bottom: 196px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px;">
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <span class="eyebrow">DIOR, 05, Design System &amp; Scalabilité</span>
+          <h1 class="h2">Une base scalable, <em class="editorial">fidèle</em> à la Maison.</h1>
+        </div>
+        <span class="mono" style="padding-bottom: 8px;">Composants modulaires</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 48px; flex: 1;">
+        <div style="display: flex; flex-direction: column; gap: 28px; justify-content: center;">
+          <p class="body">Une base de composants modulaire, rigoureusement alignée sur l'identité digitale de la Maison Dior.</p>
+
+          <div style="display: flex; flex-direction: column; gap: 18px; padding-top: 24px; border-top: 1px solid var(--rule);">
+            <div>
+              <p class="h3" style="font-size: 26px;">Composants modulaires</p>
+              <p class="small" style="margin-top: 4px;">Une architecture centralisée qui renforce la cohérence graphique globale de la plateforme.</p>
+            </div>
+            <div>
+              <p class="h3" style="font-size: 26px;">Scalabilité fluide</p>
+              <p class="small" style="margin-top: 4px;">Une fondation prête à absorber les futures évolutions produit.</p>
+            </div>
+            <div>
+              <p class="h3" style="font-size: 26px;">Noir &amp; blanc utilitariste</p>
+              <p class="small" style="margin-top: 4px;">L'épure iconique de la marque comme levier ergonomique : la donnée métier, statuts, actions, classements, toujours lisible.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-frame dior contain" style="padding: 24px;">
+          <img src="assets/dior/02-confirmation-emails.png" alt="DIOR, système d'emails transactionnels aligné sur l'identité de la Maison"/>
+        </div>
+      </div>
+    </div>
+    <div class="nav-strip">
+      <div class="nav-left">
+        <span class="nav-section">Études de cas</span>
+        <span class="nav-section-active">DIOR, 05 / 06</span>
+      </div>
+      <div class="nav-pageno"><div class="badge">26</div></div>
+    </div>
+  </section>
+
+
+  <!-- ════════════ 20 DIOR, IMPACT ════════════ -->
+  <section data-label="29 DIOR, Impact" style="background: var(--primary); color: #fff;">
+    <div class="slide-pad" style="padding-bottom: 196px;">
+      <div style="display: flex; flex-direction: column; gap: 28px; margin-bottom: 80px;">
+        <span class="eyebrow" style="color: rgba(255,255,255,0.65);">DIOR, 06, Impact &amp; Métriques</span>
+        <h1 class="h2" style="color: #fff;">Des résultats mesurables <br/>dès le lancement.</h1>
+        <p class="body" style="color: rgba(255,255,255,0.78); max-width: 1100px;">La complexité gommée au profit de l'efficacité opérationnelle. La plateforme est devenue un outil que les équipes veulent utiliser.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; flex: 1; align-content: center;">
+        <div>
+          <div style="font-size: 180px; line-height: 0.9; font-weight: 700; letter-spacing: -0.04em; color: #fff;">61<span style="font-size: 0.55em;">%</span></div>
+          <p class="body" style="color: #fff; margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.25); font-size: 26px;">de taux d'ouverture des emails <br/>transactionnels, contre 22% au lancement</p>
+        </div>
+        <div>
+          <div style="font-size: 180px; line-height: 0.9; font-weight: 700; letter-spacing: -0.04em; color: #fff;">-60<span style="font-size: 0.55em;">%</span></div>
+          <p class="body" style="color: #fff; margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.25); font-size: 26px;">de temps de traitement <br/>administratif pour les managers</p>
+        </div>
+        <div>
+          <div style="font-size: 180px; line-height: 0.9; font-weight: 700; letter-spacing: -0.04em; color: #fff;">+52<span style="font-size: 0.55em;">%</span></div>
+          <p class="body" style="color: #fff; margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.25); font-size: 26px;">d'engagement hebdomadaire <br/>des apprenants actifs</p>
+        </div>
+      </div>
+    </div>
+    <div class="nav-strip dark">
+      <div class="nav-left">
+        <span class="nav-section">Études de cas</span>
+        <span class="nav-section-active">DIOR, 06 / 06</span>
+      </div>
+      <div class="nav-pageno"><div class="badge" style="background: #fff; color: var(--primary);">27</div></div>
+    </div>
+  </section>
+
+
+  
+
+  <!-- ════════════ APM, CONTEXTE (nouvelle étude de cas) ════════════ -->
+  <section data-label="30 APM, Contexte" style="background: var(--cream);">
+    <div class="slide-pad" style="padding-bottom: 196px;">
+      <div style="display: flex; flex-direction: column; gap: 18px; margin-bottom: 26px;">
+        <span class="eyebrow">APM, 01, Contexte &amp; Cadrage</span>
+        <h1 class="h2">L'espace membre d'un réseau <br/>de <em class="editorial">dirigeants</em>.</h1>
+        <p class="body" style="max-width: 1500px;">Réunir dans un même espace l'adhésion, le planning des rencontres, les communautés et les documents contractuels, pour des membres qui ne se connectent que ponctuellement.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 22px;">
+        <div style="padding: 14px 0; border-top: 1px solid var(--rule);">
+          <span class="eyebrow muted">Client</span>
+          <p class="h3" style="margin-top: 8px; font-size: 26px;">APM</p>
+          <p class="small" style="margin-top: 4px;">Réseau de dirigeants d'entreprise</p>
+        </div>
+        <div style="padding: 14px 0; border-top: 1px solid var(--rule);">
+          <span class="eyebrow muted">Rôle</span>
+          <p class="h3" style="margin-top: 8px; font-size: 26px;">Product Designer</p>
+          <p class="small" style="margin-top: 4px;">UI, Design System, responsive</p>
+        </div>
+        <div style="padding: 14px 0; border-top: 1px solid var(--rule);">
+          <span class="eyebrow muted">Périmètre</span>
+          <p class="h3" style="margin-top: 8px; font-size: 26px;">Espace membre</p>
+          <p class="small" style="margin-top: 4px;">Adhésion, club, planning, communautés</p>
+        </div>
+        <div style="padding: 14px 0; border-top: 1px solid var(--rule);">
+          <span class="eyebrow muted">Contrainte</span>
+          <p class="h3" style="margin-top: 8px; font-size: 26px;">Usage intermittent</p>
+          <p class="small" style="margin-top: 4px;">Aucun apprentissage de l'outil possible</p>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 44px; flex: 1; min-height: 0; align-items: stretch;">
+        <div style="display: flex; flex-direction: column; gap: 18px; min-height: 0;">
+          <span class="eyebrow muted">Le parti pris</span>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--rule-soft);">
+              <span style="font-size: 28px; font-weight: 700; color: var(--primary);">01</span>
+              <div>
+                <p class="h3" style="font-size: 25px;">Ouvrir sur l'action, pas sur le menu</p>
+                <p class="small" style="margin-top: 4px;">« Mes actions » et « Mes prochaines dates » ouvrent l'accueil : ce qui attend le membre passe avant l'arborescence.</p>
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--rule-soft);">
+              <span style="font-size: 28px; font-weight: 700; color: var(--primary);">02</span>
+              <div>
+                <p class="h3" style="font-size: 25px;">Rendre le contractuel désirable</p>
+                <p class="small" style="margin-top: 4px;">Contrats et conventions deviennent des cartes à statut explicite, non une liste de pièces jointes.</p>
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: baseline; padding: 10px 0;">
+              <span style="font-size: 28px; font-weight: 700; color: var(--primary);">03</span>
+              <div>
+                <p class="h3" style="font-size: 25px;">Une couleur qui porte du sens</p>
+                <p class="small" style="margin-top: 4px;">Le dégradé de marque distingue les natures d'information, adhésion, club, profil. Il ne décore pas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-frame apm contain" style="min-height: 0; padding: 16px;">
+          <img src="assets/apm/dashboard.png" alt="APM, tableau de bord du membre, desktop et mobile"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════ APM, MULTI-ÉCRANS (nouvelle slide) ════════════ -->
+  <section data-label="31 APM, Multi-écrans">
+    <div class="slide-pad" style="padding-bottom: 196px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 26px;">
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+          <span class="eyebrow">APM, 02, Responsive &amp; Design System</span>
+          <h1 class="h2">Chaque écran pensé <em class="editorial">deux fois</em>, <br/>jamais rétréci.</h1>
+        </div>
+        <span class="mono" style="padding-bottom: 8px;">Desktop · Mobile · Light &amp; Dark</span>
+      </div>
+
+      <p class="body" style="max-width: 1560px; margin-bottom: 24px;">Chaque vue est maquettée en desktop et en mobile en parallèle, à partir des mêmes composants. Le mobile n'est pas une réduction du desktop : la hiérarchie y est rejouée.</p>
+
+      <div class="screens-row" style="flex: 1;">
+        <div class="mockup-frame apm contain" style="min-height: 0; padding: 14px;">
+          <img src="assets/apm/club-responsive.png" alt="APM, page club en desktop et en mobile"/>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 14px; min-height: 0;">
+          <div style="padding-top: 16px; border-top: 1px solid var(--rule);">
+            <p class="h3" style="font-size: 23px;">Une pile, pas une colonne écrasée</p>
+            <p class="small" style="margin-top: 5px; font-size: 22px;">Les cartes de données se réordonnent verticalement, en gardant leur ordre d'importance.</p>
+          </div>
+          <div style="padding-top: 16px; border-top: 1px solid var(--rule);">
+            <p class="h3" style="font-size: 23px;">Navigation escamotable</p>
+            <p class="small" style="margin-top: 5px; font-size: 22px;">Le rail latéral devient un menu, la recherche reste accessible en permanence.</p>
+          </div>
+          <div style="padding-top: 16px; border-top: 1px solid var(--rule);">
+            <p class="h3" style="font-size: 23px;">Deux thèmes dès la conception</p>
+            <p class="small" style="margin-top: 5px; font-size: 22px;">La bascule clair / sombre est traitée en variables de couleur, pas en second jeu de maquettes.</p>
+          </div>
+          <div class="proof-row" style="margin-top: auto; padding-top: 12px;">
+            <span class="proof-chip">Responsive</span>
+            <span class="proof-chip">Composants partagés</span>
+            <span class="proof-chip">Tokens de couleur</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ════════════ PIERRE FABRE ════════════ -->
+  <section data-label="32 Pierre Fabre" style="background: var(--cream);">
+    <div class="slide-pad" style="padding-bottom: 196px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 48px;">
+        <div style="display: flex; flex-direction: column; gap: 24px; max-width: 1200px;">
+          <span class="eyebrow">05 Pierre Fabre</span>
+          <h1 class="title">Diversifier les contenus <br/>d'un lancement de gamme.</h1>
+        </div>
+        <span class="mono" style="white-space: nowrap; padding-top: 16px;">Social Media</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 48px; flex: 1; min-height: 0;">
+        <div style="display: flex; flex-direction: column; gap: 28px; justify-content: center;">
+          <div>
+            <span class="eyebrow muted">Projet</span>
+            <p class="body" style="margin-top: 12px;">Réponse à un appel d'offre pour l'accompagnement du lancement d'une nouvelle gamme de produits Pierre Fabre sur les réseaux sociaux : une stratégie de contenus diversifiée, mêlant photographie, création graphique et vidéo, pour séduire la communauté.</p>
+          </div>
+          <div>
+            <span class="eyebrow muted">Rôle</span>
+            <p class="body" style="margin-top: 12px;">Direction artistique, création graphique et vidéo.</p>
+          </div>
+          <div>
+            <span class="eyebrow muted">Livré</span>
+            <p class="body" style="margin-top: 12px;">Deux piliers de contenu, #Care et #Conscious : photographie produit, stories Instagram séquencées, témoignages vidéo d'experts.</p>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); gap: 12px; min-height: 0;">
+          <div class="mockup-frame contain" style="background: #fff; min-height: 0; padding: 8px;"><img src="assets/pierrefabre/care-grid.png" alt="Pierre Fabre, campagne #Care, photographie produit"/></div>
+          <div class="mockup-frame contain" style="background: #fff; min-height: 0; padding: 8px;"><img src="assets/pierrefabre/care-story-phone.png" alt="Pierre Fabre, story Instagram #Care"/></div>
+          <div class="mockup-frame contain" style="background: #fff; min-height: 0; padding: 8px;"><img src="assets/pierrefabre/conscious-grid.png" alt="Pierre Fabre, campagne #Conscious, photographie produit"/></div>
+          <div class="mockup-frame contain" style="background: #fff; min-height: 0; padding: 8px;"><img src="assets/pierrefabre/conscious-story-phone.png" alt="Pierre Fabre, story Instagram #Conscious"/></div>
+        </div>
+      </div>
+    </div>
+    <div class="nav-strip">
+      <div class="nav-left">
+        <span class="nav-section">Études de cas</span>
+        <span class="nav-section-active">Pierre Fabre</span>
+      </div>
+      <div class="nav-pageno"><div class="badge">28</div></div>
+    </div>
+  </section>
+
+
+
+  <!-- ════════════ ACTE 3, ASSETS & ICONOGRAPHIE (nouvelle slide) ════════════ -->
+  <section data-label="33 Assets &amp; iconographie" style="background: var(--cream);">
+    <div class="slide-pad" style="padding-bottom: 196px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px;">
+        <div style="display: flex; flex-direction: column; gap: 20px; max-width: 1250px;">
+          <span class="eyebrow">Méthode, 01, Production graphique</span>
+          <h1 class="title">Ce que je produis, <em class="editorial">concrètement</em>.</h1>
+        </div>
+        <span class="mono" style="padding-bottom: 8px;">Figma · Illustrator · After Effects</span>
+      </div>
+
+      <p class="body" style="max-width: 1560px; margin-bottom: 32px;">Au-delà des maquettes d'écrans, l'essentiel du travail de marque tient dans les briques qui la rendent reproductible par d'autres. Chaque famille ci-dessous a été produite et maintenue sur les projets présentés.</p>
+
+      <div class="deliv-grid" style="flex: 1; align-content: start;">
+        <div class="deliv-cell">
+          <div class="dc-title">Icon sets</div>
+          <div class="dc-desc">Jeux d'icônes cohérents en graisse et en grille, déclinés par produit et maintenus dans la librairie.</div>
+          <div class="dc-meta">DIOR · Smartch</div>
+        </div>
+        <div class="deliv-cell">
+          <div class="dc-title">Illustrations &amp; 3D</div>
+          <div class="dc-desc">Registre illustratif propre à chaque marque, du trait botanique aux rendus volumétriques.</div>
+          <div class="dc-meta">Pierre Fabre · Smartch</div>
+        </div>
+        <div class="deliv-cell">
+          <div class="dc-title">Patterns &amp; fonds</div>
+          <div class="dc-desc">Motifs et dégradés de marque, pensés pour tenir du bandeau web au format story.</div>
+          <div class="dc-meta">Smartch · APM</div>
+        </div>
+        <div class="deliv-cell">
+          <div class="dc-title">Layouts éditoriaux</div>
+          <div class="dc-desc">Grilles capables d'absorber contenu, conversion et publicité dans un même langage.</div>
+          <div class="dc-meta">EnVols</div>
+        </div>
+        <div class="deliv-cell">
+          <div class="dc-title">Templates sociaux</div>
+          <div class="dc-desc">Gabarits par rubrique et par format, conçus pour des volumes de texte variables.</div>
+          <div class="dc-meta">EnVols · Pierre Fabre · Autrice</div>
+        </div>
+        <div class="deliv-cell">
+          <div class="dc-title">Kits de présentation</div>
+          <div class="dc-desc">Systèmes de slides reprenant les tokens du produit, utilisables sans designer.</div>
+          <div class="dc-meta">Smartch · Autrice</div>
+        </div>
+        <div class="deliv-cell">
+          <div class="dc-title">Emails &amp; CRM</div>
+          <div class="dc-desc">Systèmes transactionnels et newsletters alignés sur l'identité, du gabarit au ton.</div>
+          <div class="dc-meta">DIOR · EnVols</div>
+        </div>
+        <div class="deliv-cell">
+          <div class="dc-title">Guidelines</div>
+          <div class="dc-desc">Documentation des règles d'usage, pour que le système survive à son auteur.</div>
+          <div class="dc-meta">Transverse</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════ ACTE 3, ATELIERS & ADOPTION (nouvelle slide) ════════════ -->
+  <section data-label="34 Ateliers &amp; adoption">
+    <div class="slide-pad" style="padding-bottom: 196px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px;">
+        <div style="display: flex; flex-direction: column; gap: 20px; max-width: 1250px;">
+          <span class="eyebrow">Méthode, 02, Ateliers &amp; adoption</span>
+          <h1 class="title">Un système n'existe que <br/>s'il est <em class="editorial">adopté</em>.</h1>
+        </div>
+        <span class="mono" style="padding-bottom: 8px;">3 designers encadrés</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; flex: 1; min-height: 0; align-items: start;">
+        <div style="display: flex; flex-direction: column; gap: 24px;">
+          <p class="body">La partie visible du métier, ce sont les écrans. La partie qui décide de leur survie, c'est ce qui se passe autour : les ateliers où les partis pris se discutent, et la documentation qui permet aux équipes de s'en servir sans moi.</p>
+
+          <div class="ba-grid">
+            <div class="ba-col before">
+              <span class="ba-head">Sans ce travail</span>
+              <ul>
+                <li>La charte se dégrade au fil des urgences.</li>
+                <li>Chaque équipe recrée ses propres variantes.</li>
+                <li>Le designer devient un goulot d'étranglement.</li>
+              </ul>
+            </div>
+            <div class="ba-col after">
+              <span class="ba-head">Avec ce travail</span>
+              <ul>
+                <li>Les commerciaux produisent leurs decks seuls.</li>
+                <li>Le marketing anime les réseaux en autonomie.</li>
+                <li>Les développeurs assemblent depuis la librairie.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+          <div style="padding-top: 20px; border-top: 2px solid var(--rule);">
+            <p class="h3" style="font-size: 28px;">Ateliers de co-conception</p>
+            <p class="small" style="margin-top: 6px;">Cadrage avec les équipes Produit, Marque et Édito en amont des maquettes : les arbitrages se prennent ensemble, pas en revue de fin de projet.</p>
+          </div>
+          <div style="padding-top: 20px; border-top: 2px solid var(--rule);">
+            <p class="h3" style="font-size: 28px;">Défendre un parti pris</p>
+            <p class="small" style="margin-top: 6px;">Chaque proposition est présentée avec ce qu'elle sert : le widget de réservation d'EnVols, le motion de Smartch ou le noir et blanc de DIOR se justifient par un usage, pas par un goût.</p>
+          </div>
+          <div style="padding-top: 20px; border-top: 2px solid var(--rule);">
+            <p class="h3" style="font-size: 28px;">Documenter et transmettre</p>
+            <p class="small" style="margin-top: 6px;">Règles d'usage, gabarits commentés, accompagnement à la prise en main. Encadrement de 3 designers chez Reworld Media.</p>
+          </div>
+          <div style="padding-top: 20px; border-top: 2px solid var(--rule);">
+            <p class="h3" style="font-size: 28px;">Veille continue</p>
+            <p class="small" style="margin-top: 6px;">Benchmark des tendances et des codes de marque, pour nourrir les propositions plutôt que suivre les modes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ════════════ 25 CHIFFRES CLÉS ════════════ -->
+  <section data-label="35 Chiffres clés" style="background: var(--primary-soft);">
+    <div class="slide-pad" style="padding-bottom: 196px;">
+      <div style="display: flex; flex-direction: column; gap: 28px; margin-bottom: 100px;">
+        <span class="eyebrow">Impact agrégé</span>
+        <h1 class="title">Chiffres clés.</h1>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; flex: 1; align-items: center; text-align: center;">
+        <div class="stat-cell">
+          <div class="num">8</div>
+          <p class="lab">années<br/>d'expérience</p>
+        </div>
+        <div class="stat-cell">
+          <div class="num">50<span style="font-size: 0.5em;">+</span></div>
+          <p class="lab">marques<br/>accompagnées</p>
+        </div>
+        <div class="stat-cell">
+          <div class="num">4M<span style="font-size: 0.5em;">+</span></div>
+          <p class="lab">audience<br/>touchée</p>
+        </div>
+        <div class="stat-cell">
+          <div class="num">-35<span style="font-size: 0.6em;">%</span></div>
+          <p class="lab">temps<br/>de production</p>
+        </div>
+        <div class="stat-cell">
+          <div class="num">3</div>
+          <p class="lab">designers<br/>encadrés</p>
+        </div>
+      </div>
+    </div>
+    <div class="nav-strip">
+      <div class="nav-left">
+        <span class="nav-section-active">Impact</span>
+      </div>
+      <div class="nav-pageno">
+        <div class="badge">29</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════ 26 PARCOURS ════════════ -->
+  <section data-label="36 Parcours">
+    <div class="slide-pad" style="padding-bottom: 196px;">
+      <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 28px;">
+        <span class="eyebrow">Parcours &amp; compétences</span>
+        <h1 class="title">Le chemin parcouru.</h1>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 80px; flex: 1; align-items: start;">
+        <div>
+          <div class="timeline-row">
+            <span class="yr">2025, maintenant</span>
+            <div>
+              <p class="role-name">Product &amp; Brand Designer Freelance</p>
+              <p class="role-desc">CMA CGM, SNCF, Betclic, Enedis, Fédération Française de Handball.</p>
+            </div>
+          </div>
+          <div class="timeline-row">
+            <span class="yr">2023, 2025</span>
+            <div>
+              <p class="role-name">Product Designer Senior, Smartch</p>
+              <p class="role-desc">Safran, Décathlon, FFF, Autrice, DIOR, Orange, SKEMA.</p>
+            </div>
+          </div>
+          <div class="timeline-row">
+            <span class="yr">2019, 2023</span>
+            <div>
+              <p class="role-name">Directeur Artistique Digital, Reworld Media</p>
+              <p class="role-desc">Encadrement de 3 designers. Air France, Reezocar, Social Playground, Melty.</p>
+            </div>
+          </div>
+          <div class="timeline-row">
+            <span class="yr">2015, 2019</span>
+            <div>
+              <p class="role-name">Digital Designer, Reworld Media</p>
+              <p class="role-desc">Orange, Leads Lab, Atelier.B, One Experience, Lapeyre.</p>
+            </div>
+          </div>
+          <div class="timeline-row">
+            <span class="yr">2012, 2015</span>
+            <div>
+              <p class="role-name">Epitech Digital School</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 36px;">
+          <div>
+            <span class="eyebrow muted" style="margin-bottom: 20px; display: block;">Compétences</span>
+            <div class="tag-group">
+              <span class="tag">Direction artistique</span>
+              <span class="tag">Identité de marque</span>
+              <span class="tag">Iconographie &amp; Illustration</span>
+              <span class="tag">Wireframing</span>
+              <span class="tag">Prototypage</span>
+              <span class="tag">Design System</span>
+              <span class="tag">UX / UI</span>
+              <span class="tag">Encadrement</span>
+              <span class="tag">Agile</span>
+            </div>
+          </div>
+          <div>
+            <span class="eyebrow muted" style="margin-bottom: 20px; display: block;">Outils</span>
+            <div class="tag-group">
+              <span class="tag filled">Figma</span>
+              <span class="tag filled">Photoshop</span>
+              <span class="tag filled">Illustrator</span>
+              <span class="tag filled">After Effects</span>
+              <span class="tag filled">WordPress</span>
+              <span class="tag filled">Brevo</span>
+              <span class="tag filled">Webflow</span>
+              <span class="tag filled">Claude</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nav-strip">
+      <div class="nav-left">
+        <span class="nav-section-active">Parcours</span>
+      </div>
+      <div class="nav-pageno">
+        <div class="badge">30</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════ 27 CE QUE JE CHERCHE ════════════ -->
+  <section data-label="37 Vision" style="background: var(--cream);">
+    <div class="slide-pad" style="justify-content: center; padding-bottom: 196px;">
+      <div style="max-width: 1500px; margin: 0 auto;">
+        <span class="eyebrow" style="margin-bottom: 40px; display: block;">Ce qui m'intéresse, maintenant</span>
+        <h1 class="display" style="font-size: 96px; line-height: 1.04; margin-bottom: 96px;">Rejoindre une équipe Design où la <em class="editorial">marque</em> infuse chaque écran.</h1>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; padding-top: 48px; border-top: 1px solid var(--rule);">
+          <div>
+            <span class="eyebrow muted">Contexte</span>
+            <p class="body" style="margin-top: 16px;">Produits numériques à forte visibilité, au sein d'une équipe Design structurée : Design System, accessibilité, UX Writing, Artwork, DesignOps.</p>
+          </div>
+          <div>
+            <span class="eyebrow muted">Posture</span>
+            <p class="body" style="margin-top: 16px;">Un rôle réellement hybride, moitié Direction Artistique, moitié UI, aux côtés du Lead Brand Design et des équipes Produit.</p>
+          </div>
+          <div>
+            <span class="eyebrow muted">Ambition 12 mois</span>
+            <p class="body" style="margin-top: 16px;">Faire vivre une identité cohérente du web au mobile, du CRM au social, et outiller les équipes pour qu'elle tienne dans le temps.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nav-strip">
+      <div class="nav-left">
+        <span class="nav-section-active">Vision</span>
+      </div>
+      <div class="nav-pageno">
+        <div class="badge">31</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════ 28 CONTACT ════════════ -->
+  <section data-label="38 Contact">
+    <div class="cover">
+      <div class="right" style="background: var(--ink); display: flex; align-items: flex-end; justify-content: center;">
+        <img src="assets/portrait-charles.png" alt="Charles Dufour" style="width: 100%; height: 100%; object-fit: contain; object-position: bottom center; display: block;"/>
+      </div>
+
+      <div class="left" style="order: -1; background: var(--primary);">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <div class="monogram" style="background: rgba(255,255,255,0.12); color: #fff; border: 1.5px solid rgba(255,255,255,0.2);">CD</div>
+          <span class="mono" style="color: rgba(255,255,255,0.55);">Et maintenant ?</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 48px;">
+          <span class="eyebrow" style="color: rgba(255,255,255,0.65);">ET MAINTENANT ?</span>
+          <h1 class="display" style="font-size: 96px; line-height: 0.98; color: #fff;">Discutons</h1>
+
+          <div style="display: flex; flex-direction: column; gap: 18px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.2);">
+            <div style="display: grid; grid-template-columns: 160px 1fr; gap: 24px; align-items: baseline;">
+              <span class="eyebrow" style="color: rgba(255,255,255,0.6);">Email</span>
+              <span style="color: #fff; font-size: 30px; font-weight: 500;">dufourcharles3@gmail.com</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 160px 1fr; gap: 24px; align-items: baseline;">
+              <span class="eyebrow" style="color: rgba(255,255,255,0.6);">Site</span>
+              <span style="color: #fff; font-size: 30px; font-weight: 500;">charlesdufour.fr</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 160px 1fr; gap: 24px; align-items: baseline;">
+              <span class="eyebrow" style="color: rgba(255,255,255,0.6);">LinkedIn</span>
+              <span style="color: #fff; font-size: 30px; font-weight: 500;">in/charles-dufour-17068653</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 160px 1fr; gap: 24px; align-items: baseline;">
+              <span class="eyebrow" style="color: rgba(255,255,255,0.6);">Téléphone</span>
+              <span style="color: #fff; font-size: 30px; font-weight: 500;">06 89 95 14 81</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 160px 1fr; gap: 24px; align-items: baseline;">
+              <span class="eyebrow" style="color: rgba(255,255,255,0.6);">Statut</span>
+              <span style="color: #fff; font-size: 30px; font-weight: 500;">Freelance</span>
+            </div>
+          </div>
+        </div>
+
+        <span class="baseline">2026</span>
+      </div>
+    </div>
+  </section>
+
+</deck-stage>
+
+
+<script>
+(function () {
+  "use strict";
+
+  /* ----------------------------------------------------------------
+     Visuels manquants
+     Tant qu'un fichier n'est pas depose dans assets/, on remplace
+     l'image par un cadre nomme : la mise en page conserve ses
+     proportions et le fichier attendu reste identifiable a l'ecran
+     comme dans le PDF.
+     ---------------------------------------------------------------- */
+  function placeholderFor(img) {
+    var box = document.createElement("div");
+    box.className = "img-missing";
+    var label = document.createElement("span");
+    label.className = "im-label";
+    label.textContent = img.getAttribute("alt") || "Visuel a fournir";
+    var file = document.createElement("span");
+    file.className = "im-file";
+    file.textContent = img.getAttribute("src") || "";
+    box.appendChild(label);
+    box.appendChild(file);
+    /* On reprend les contraintes de taille posees en style inline. */
+    var s = img.getAttribute("style") || "";
+    var keep = s.match(/max-height\s*:\s*[^;]+/);
+    if (keep) { box.style.maxHeight = keep[0].split(":")[1].trim(); }
+    return box;
+  }
+
+  var images = Array.prototype.slice.call(document.images);
+  var pending = images.length;
+  var missing = [];
+
+  function done(img, ok) {
+    if (!ok) {
+      missing.push(img.getAttribute("src"));
+      if (img.parentNode) { img.parentNode.replaceChild(placeholderFor(img), img); }
+    }
+    if (--pending <= 0) { finish(); }
+  }
+
+  function finish() {
+    window.__assetsMissing = missing;
+    document.documentElement.setAttribute("data-assets-ready", "1");
+    if (missing.length) {
+      console.warn("Visuels manquants (" + missing.length + ") :\n" + missing.join("\n"));
+    }
+  }
+
+  if (!images.length) {
+    finish();
+  } else {
+    images.forEach(function (img) {
+      if (img.complete) {
+        done(img, img.naturalWidth > 0);
+      } else {
+        img.addEventListener("load", function () { done(img, true); });
+        img.addEventListener("error", function () { done(img, false); });
+      }
+    });
+  }
+
+  /* ----------------------------------------------------------------
+     Confort de lecture a l'ecran
+     Le deck est concu en 1920x1080. On le met a l'echelle de la
+     fenetre pour le relire sans scroll horizontal. Neutralise a
+     l'impression par la regle @media print.
+     ---------------------------------------------------------------- */
+  var stage = document.querySelector("deck-stage");
+  function fit() {
+    if (!stage || window.matchMedia("print").matches) { return; }
+    var scale = Math.min(1, (window.innerWidth - 48) / 1920);
+    stage.style.zoom = scale;
+  }
+  fit();
+  window.addEventListener("resize", fit);
+})();
+</script>
+
+</body>
+</html>
