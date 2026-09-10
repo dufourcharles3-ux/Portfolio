@@ -34,7 +34,7 @@ import { chromium } from "playwright";
 import PptxGenJS from "pptxgenjs";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, resolve } from "node:path";
-import { statSync, existsSync } from "node:fs";
+import { statSync } from "node:fs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const SRC = resolve(HERE, process.argv[2] ?? "index.html");
@@ -54,7 +54,10 @@ const SERIF = "Cambria";
 // ---------------------------------------------------------------------------
 // 1. Mesure du rendu
 // ---------------------------------------------------------------------------
-const browser = await chromium.launch();
+// --allow-file-access-from-files : sans ce drapeau, une page file:// qui
+// dessine une image file:// dans un canvas le rend "tainted", et l'export
+// du canvas est refusé. C'est ce mécanisme qui sert au rééchantillonnage.
+const browser = await chromium.launch({ args: ["--allow-file-access-from-files"] });
 const page = await browser.newPage({ viewport: { width: DESIGN_W, height: DESIGN_H } });
 await page.goto(pathToFileURL(SRC).href, { waitUntil: "load" });
 await page.evaluate(() => document.fonts.ready);
@@ -265,6 +268,39 @@ const overflows = await page.evaluate(async ({ slides, pad }) => {
   return out;
 }, { slides, pad: 8 });
 
+// ---------------------------------------------------------------------------
+// 1 ter. Rééchantillonnage des visuels
+// Les sources font jusqu'à 2500 px de large pour un affichage de 700 px.
+// Embarquées telles quelles, elles portaient le fichier à 38 Mo. On les
+// réencode à deux fois leur taille d'affichage, ce qui reste au-delà de ce
+// qu'un vidéoprojecteur ou une impression exploitent.
+const encoded = await page.evaluate(async (jobs) => {
+  const out = {};
+  for (const j of jobs) {
+    const img = new Image();
+    img.src = j.src;
+    try { await img.decode(); } catch { continue; }
+    const scale = Math.min(1, (j.w * 2) / img.naturalWidth);
+    const cw = Math.max(1, Math.round(img.naturalWidth * scale));
+    const chh = Math.max(1, Math.round(img.naturalHeight * scale));
+    const c = document.createElement("canvas");
+    c.width = cw; c.height = chh;
+    const ctx = c.getContext("2d");
+    ctx.drawImage(img, 0, 0, cw, chh);
+
+    // La transparence impose le PNG : en JPEG, le fond deviendrait noir.
+    let alpha = false;
+    try {
+      const d = ctx.getImageData(0, 0, cw, chh).data;
+      for (let i = 3; i < d.length; i += 4 * 97) { if (d[i] < 250) { alpha = true; break; } }
+    } catch { alpha = true; }
+
+    out[j.src] = alpha ? c.toDataURL("image/png") : c.toDataURL("image/jpeg", 0.82);
+  }
+  return out;
+}, [...new Map(slides.flatMap((s) => s.images).map((i) => [i.src, i])).values()]
+     .map((i) => ({ src: i.src, w: Math.round(i.w) })));
+
 const meta = await page.evaluate(() => ({
   title: document.title || "",
   author: document.querySelector('meta[name="author"]')?.content || "",
@@ -320,10 +356,12 @@ for (const s of slides) {
 
   // Visuels.
   for (const im of s.images) {
-    const p = resolve(HERE, im.src);
-    if (!existsSync(p)) { missing++; continue; }
+    const dataUrl = encoded[im.src];
+    if (!dataUrl) { missing++; continue; }
     slide.addImage({
-      path: p, x: IN(im.x), y: IN(im.y), w: IN(im.w), h: IN(im.h),
+      // pptxgenjs attend "<mime>;base64,..." sans le prefixe "data:".
+      data: dataUrl.replace(/^data:/, ""),
+      x: IN(im.x), y: IN(im.y), w: IN(im.w), h: IN(im.h),
       ...(im.cover ? { sizing: { type: "cover", w: IN(im.clip.w), h: IN(im.clip.h) } } : {}),
     });
     shapes++;
