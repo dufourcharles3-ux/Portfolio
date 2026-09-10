@@ -3,3 +3,6 @@ node_modules/
 # Le PDF est un livrable regenere a la demande (npm run pdf),
 # pas une source. On evite d'alourdir l'historique a chaque export.
 *.pdf
+
+# Derive de index.html par "npm run anon".
+index-anonyme.html

@@ -7,9 +7,15 @@ Figma / Design System**.
 ## Générer le PDF
 
 ```bash
-npm install          # installe Playwright, la seule dépendance
-npm run pdf          # écrit Portfolio-Charles-Dufour.pdf
+npm install                  # installe Playwright, la seule dépendance
+npx playwright install chromium   # une seule fois, sur une machine neuve
+npm run pdf                  # écrit Portfolio-Charles-Dufour.pdf
 ```
+
+La version de Playwright est **figée** (`1.56.1`, sans accent circonflexe) :
+chaque version est liée à un build de Chromium précis, et un intervalle
+laisserait npm installer une version dont le navigateur n'est pas présent.
+Le lancement échouerait alors sur `Executable doesn't exist`.
 
 Le script ouvre `index.html` dans Chromium, attend le chargement effectif
 des polices et des visuels, puis rasterise une page PDF par slide. En fin
@@ -18,6 +24,32 @@ d'exécution, il liste les visuels manquants.
 ```bash
 node build-pdf.mjs index.html mon-export.pdf   # chemins personnalisés
 ```
+
+## Version anonymisée
+
+```bash
+npm run pdf:anon     # écrit index-anonyme.html puis Portfolio-anonyme.pdf
+npm run anon         # régénère seulement le HTML
+```
+
+`index.html` reste la source nominative ; `make-anonymous.mjs` en dérive une
+copie expurgée à chaque lancement. Il n'y a donc **pas deux documents à
+maintenir** : toute modification du master se répercute sur la version
+anonymisée.
+
+Sont retirés : le nom, le site, l'email, le téléphone, le LinkedIn, le
+monogramme, la slide de contact (37 slides au lieu de 38) et le portrait
+photographique. La couverture repasse en pleine largeur et affiche le
+positionnement à la place du nom ; la slide « À propos » récupère la largeur
+libérée par le portrait.
+
+Sont conservés les noms de clients et d'employeurs : ils font la valeur du
+dossier et ne sont pas des données personnelles du candidat.
+
+Le script échoue s'il ne retrouve pas un motif attendu (le master a changé)
+ou s'il subsiste la moindre mention identifiante. Le titre du document est
+également neutralisé, faute de quoi le nom réapparaîtrait dans les
+propriétés du PDF.
 
 ## Relire à l'écran
 
@@ -31,7 +63,8 @@ se met automatiquement à l'échelle de la fenêtre.
 ## Vérifier les mises en page
 
 ```bash
-node check-overflow.mjs
+node check-overflow.mjs                      # le master
+node check-overflow.mjs index-anonyme.html   # la version anonymisée
 ```
 
 Signale toute slide dont le contenu dépasse le cadre 1920 × 1080. À lancer
@@ -48,6 +81,7 @@ mais coupé dans le PDF.
 | `assets/fonts/` | DM Sans, DM Mono, Instrument Serif en local. |
 | `build-pdf.mjs` | Export PDF. |
 | `check-overflow.mjs` | Contrôle des débordements. |
+| `make-anonymous.mjs` | Dérive la version anonymisée. |
 
 ## Notes d'implémentation
 

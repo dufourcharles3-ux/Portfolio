@@ -8,10 +8,12 @@ import { fileURLToPath } from "node:url";
 const HERE = dirname(fileURLToPath(import.meta.url));
 const b = await chromium.launch();
 const p = await b.newPage({ viewport: { width: 1920, height: 1080 } });
-await p.goto(pathToFileURL(resolve(HERE, "index.html")).href, { waitUntil: "load" });
+await p.goto(pathToFileURL(resolve(HERE, process.argv[2] ?? "index.html")).href, { waitUntil: "load" });
 await p.evaluate(() => document.fonts.ready);
 await p.waitForFunction(() => document.documentElement.dataset.assetsReady === "1");
 await p.evaluate(() => { document.querySelector("deck-stage").style.zoom = 1; });
+
+const total = await p.evaluate(() => document.querySelectorAll("deck-stage > section").length);
 
 const bad = await p.evaluate(() => {
   const out = [];
@@ -41,7 +43,7 @@ const bad = await p.evaluate(() => {
 });
 await b.close();
 
-if (!bad.length) { console.log("\n  Aucun debordement. Les 38 slides tiennent dans 1920x1080.\n"); }
+if (!bad.length) { console.log(`\n  Aucun debordement. Les ${total} slides tiennent dans 1920x1080.\n`); }
 else {
   console.log(`\n  ${bad.length} slide(s) en debordement :\n`);
   for (const s of bad) {

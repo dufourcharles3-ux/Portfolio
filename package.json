@@ -7,9 +7,11 @@
   "scripts": {
     "pdf": "node build-pdf.mjs",
     "check": "node check-overflow.mjs",
-    "serve": "npx http-server . -p 8080 -c-1"
+    "serve": "npx http-server . -p 8080 -c-1",
+    "anon": "node make-anonymous.mjs",
+    "pdf:anon": "node make-anonymous.mjs && node build-pdf.mjs index-anonyme.html Portfolio-anonyme.pdf"
   },
   "dependencies": {
-    "playwright": "^1.56.1"
+    "playwright": "1.56.1"
   }
 }
