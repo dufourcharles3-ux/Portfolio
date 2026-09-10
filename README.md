@@ -51,6 +51,28 @@ ou s'il subsiste la moindre mention identifiante. Le titre du document est
 également neutralisé, faute de quoi le nom réapparaîtrait dans les
 propriétés du PDF.
 
+## Générer le PowerPoint
+
+```bash
+npm run pptx         # écrit Portfolio-Charles-Dufour.pptx (38 slides)
+npm run pptx:anon    # écrit Portfolio-anonyme.pptx (37 slides)
+```
+
+Chaque slide est rendue par Chromium en 1920 × 1080 puis posée en pleine
+page sur une diapositive 16:9 exacte (13,333" × 7,5"). Le rendu est donc
+identique au PDF.
+
+**Le texte n'est pas éditable dans PowerPoint.** C'est le prix d'une mise
+en page sur mesure : la reconstruire en zones de texte natives dégraderait
+la composition — grilles, italiques Instrument Serif, cadrages d'images —
+sans la rendre réellement modifiable. Le libellé de chaque section est
+placé en commentaire de diapositive, ce qui donne un repère utilisable
+dans le mode Plan.
+
+Les fichiers pèsent environ 7 Mo, contre 28 à 30 Mo pour les PDF : le JPEG
+compresse bien mieux que les images embarquées par Chromium dans un PDF.
+C'est la version à privilégier pour un envoi par mail.
+
 ## Relire à l'écran
 
 ```bash
@@ -80,6 +102,7 @@ mais coupé dans le PDF.
 | `assets/` | Visuels des études de cas. Voir `assets/README.md`. |
 | `assets/fonts/` | DM Sans, DM Mono, Instrument Serif en local. |
 | `build-pdf.mjs` | Export PDF. |
+| `build-pptx.mjs` | Export PowerPoint. |
 | `check-overflow.mjs` | Contrôle des débordements. |
 | `make-anonymous.mjs` | Dérive la version anonymisée. |
 

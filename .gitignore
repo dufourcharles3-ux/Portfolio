@@ -6,3 +6,6 @@ node_modules/
 
 # Derive de index.html par "npm run anon".
 index-anonyme.html
+
+# Livrables regeneres a la demande.
+*.pptx
