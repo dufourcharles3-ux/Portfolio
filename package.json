@@ -11,7 +11,9 @@
     "anon": "node make-anonymous.mjs",
     "pdf:anon": "node make-anonymous.mjs && node build-pdf.mjs index-anonyme.html Portfolio-anonyme.pdf",
     "pptx": "node build-pptx.mjs",
-    "pptx:anon": "node make-anonymous.mjs && node build-pptx.mjs index-anonyme.html Portfolio-anonyme.pptx"
+    "pptx:anon": "node make-anonymous.mjs && node build-pptx.mjs index-anonyme.html Portfolio-anonyme.pptx",
+    "pptx:editable": "node build-pptx-editable.mjs",
+    "pptx:editable:anon": "node make-anonymous.mjs && node build-pptx-editable.mjs index-anonyme.html Portfolio-anonyme-editable.pptx"
   },
   "dependencies": {
     "playwright": "1.56.1"

@@ -53,6 +53,8 @@ propriétés du PDF.
 
 ## Générer le PowerPoint
 
+### Version fidèle, non éditable
+
 ```bash
 npm run pptx         # écrit Portfolio-Charles-Dufour.pptx (38 slides)
 npm run pptx:anon    # écrit Portfolio-anonyme.pptx (37 slides)
@@ -72,6 +74,49 @@ dans le mode Plan.
 Les fichiers pèsent environ 7 Mo, contre 28 à 30 Mo pour les PDF : le JPEG
 compresse bien mieux que les images embarquées par Chromium dans un PDF.
 C'est la version à privilégier pour un envoi par mail.
+
+### Version éditable
+
+```bash
+npm run pptx:editable        # Portfolio-editable.pptx (38 slides)
+npm run pptx:editable:anon   # Portfolio-anonyme-editable.pptx (37 slides)
+```
+
+Reconstruit chaque slide en **formes et zones de texte natives** : le texte
+est sélectionnable et modifiable dans PowerPoint.
+
+La géométrie n'est pas ressaisie, elle est mesurée sur le rendu réel du
+document. La conversion est exacte, le deck étant dessiné en 1920 × 1080
+pour du 16:9 : `1 px = 13,333/1920 pouce` et `1 px = 0,5 pt`.
+
+**Substitutions typographiques.** DM Sans, DM Mono et Instrument Serif sont
+des polices Google, absentes de la plupart des postes : PowerPoint les
+remplacerait arbitrairement, avec des chasses différentes et donc des
+débordements. Elles sont remplacées par des polices livrées avec Office —
+Calibri pour le texte, Cambria italique pour les accents éditoriaux.
+
+L'interligne est imposé **en points**, pas en multiple : PowerPoint calcule
+un multiple d'après les métriques de la police, si bien que Calibri
+produisait une ligne plus haute que DM Sans et faisait chevaucher les gros
+chiffres avec leur légende.
+
+Le script mesure chaque bloc avec Carlito et Caladea, jumeaux métriques
+exacts de Calibri et Cambria, et signale tout texte qui viendrait recouvrir
+l'élément situé en dessous.
+
+Limite connue : les pseudo-éléments CSS ne sont pas des nœuds du DOM et ne
+sont donc pas repris — le cercle décoratif de la couverture disparaît.
+
+### Aperçu de contrôle
+
+```bash
+DUMP=1 node build-pptx-editable.mjs index-anonyme.html out.pptx
+node preview-pptx.mjs 1 3 9      # écrit preview-NN.png
+```
+
+LibreOffice ne fonctionne pas dans tous les environnements. Cet aperçu
+redessine la géométrie mesurée avec les jumeaux métriques : ce qu'il montre
+est ce que PowerPoint affichera.
 
 ## Relire à l'écran
 
@@ -102,7 +147,9 @@ mais coupé dans le PDF.
 | `assets/` | Visuels des études de cas. Voir `assets/README.md`. |
 | `assets/fonts/` | DM Sans, DM Mono, Instrument Serif en local. |
 | `build-pdf.mjs` | Export PDF. |
-| `build-pptx.mjs` | Export PowerPoint. |
+| `build-pptx.mjs` | Export PowerPoint, une image par diapositive. |
+| `build-pptx-editable.mjs` | Export PowerPoint natif, texte éditable. |
+| `preview-pptx.mjs` | Aperçu de contrôle de l'export natif. |
 | `check-overflow.mjs` | Contrôle des débordements. |
 | `make-anonymous.mjs` | Dérive la version anonymisée. |
 

@@ -9,3 +9,8 @@ index-anonyme.html
 
 # Livrables regeneres a la demande.
 *.pptx
+
+# Artefacts de l'apercu de controle.
+layout.json
+preview-pptx.html
+preview-*.png
