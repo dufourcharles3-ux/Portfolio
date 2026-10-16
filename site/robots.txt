@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /pierrefabre.html
+Disallow: /grazia.html
+Disallow: /leads-lab.html
+Disallow: /nota-astra.html
+
+Sitemap: https://charlesdufour.fr/sitemap.xml
